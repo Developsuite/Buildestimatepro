@@ -342,18 +342,43 @@ export default function TradePageEditor({ pageId }: TradePageEditorProps) {
 
               <div>
                 <label className="block text-sm font-medium text-[#121212] mb-2 font-figtree">
-                  Background Image Path
+                  Background Image URL
                 </label>
                 <input
-                  type="text"
+                  type="url"
                   value={formData.heroSection.backgroundImage}
                   onChange={(e) => setFormData({
                     ...formData,
                     heroSection: { ...formData.heroSection, backgroundImage: e.target.value }
                   })}
                   className="w-full px-4 py-3 border border-[#121212]/20 rounded-lg focus:outline-none focus:border-[#E8481C] focus:ring-2 focus:ring-[#E8481C]/20 font-figtree"
-                  placeholder="/images/home/image7.jpg"
+                  placeholder="https://example.com/image.jpg or /images/home/image7.jpg"
                 />
+                <p className="text-sm text-[#121212]/60 mt-1 font-figtree">
+                  Enter a full URL (https://...) or local path (/images/...)
+                </p>
+                
+                {/* Image Preview */}
+                {formData.heroSection.backgroundImage && (
+                  <div className="mt-4">
+                    <p className="text-sm font-medium text-[#121212] mb-2 font-figtree">Preview:</p>
+                    <div className="relative w-full h-32 bg-gray-100 rounded-lg overflow-hidden border border-[#121212]/10">
+                      <img
+                        src={formData.heroSection.backgroundImage}
+                        alt="Hero background preview"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.nextElementSibling!.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="hidden absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-500 text-sm font-figtree">
+                        Failed to load image
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -395,18 +420,43 @@ export default function TradePageEditor({ pageId }: TradePageEditorProps) {
 
               <div>
                 <label className="block text-sm font-medium text-[#121212] mb-2 font-figtree">
-                  Image Path
+                  Image URL
                 </label>
                 <input
-                  type="text"
+                  type="url"
                   value={formData.overviewSection.image}
                   onChange={(e) => setFormData({
                     ...formData,
                     overviewSection: { ...formData.overviewSection, image: e.target.value }
                   })}
                   className="w-full px-4 py-3 border border-[#121212]/20 rounded-lg focus:outline-none focus:border-[#E8481C] focus:ring-2 focus:ring-[#E8481C]/20 font-figtree"
-                  placeholder="/images/home/image4.jpg"
+                  placeholder="https://example.com/image.jpg or /images/home/image4.jpg"
                 />
+                <p className="text-sm text-[#121212]/60 mt-1 font-figtree">
+                  Enter a full URL (https://...) or local path (/images/...)
+                </p>
+                
+                {/* Image Preview */}
+                {formData.overviewSection.image && (
+                  <div className="mt-4">
+                    <p className="text-sm font-medium text-[#121212] mb-2 font-figtree">Preview:</p>
+                    <div className="relative w-full h-32 bg-gray-100 rounded-lg overflow-hidden border border-[#121212]/10">
+                      <img
+                        src={formData.overviewSection.image}
+                        alt="Overview section preview"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.nextElementSibling!.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="hidden absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-500 text-sm font-figtree">
+                        Failed to load image
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}

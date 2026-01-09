@@ -44,6 +44,15 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
       )
+    },
+    {
+      name: 'Blog Posts',
+      href: '/admin/blog',
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+        </svg>
+      )
     }
   ]
 
@@ -118,22 +127,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           sidebarOpen ? 'ml-[280px]' : 'ml-0'
         }`}
       >
-        {/* Header */}
-        <header className="h-20 bg-white border-b border-[#121212]/10 flex items-center justify-between px-8">
-          <h2 className="text-2xl font-bold text-[#121212] font-figtree">
-            Trade Pages Management
-          </h2>
-          <div className="flex items-center gap-4">
-            <div className="text-right">
-              <p className="text-sm font-medium text-[#121212] font-figtree">Admin User</p>
-              <p className="text-xs text-[#121212]/60 font-figtree">Administrator</p>
-            </div>
-            <div className="w-10 h-10 bg-gradient-to-br from-[#E8481C] to-[#E8481C]/80 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold font-figtree">A</span>
-            </div>
-          </div>
-        </header>
-
         {/* Page Content */}
         <div className="p-8">
           {children}

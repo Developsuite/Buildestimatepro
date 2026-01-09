@@ -135,39 +135,39 @@ export default function AdminDashboardPage() {
           </div>
         </div>
 
-        {/* Recent Activity */}
+        {/* Getting Started */}
         <div className="bg-white rounded-xl p-6 border border-[#121212]/10">
           <h2 className="text-2xl font-bold text-[#121212] mb-4 font-figtree">
             Getting Started
           </h2>
-          <div className="space-y-3">
+          <div className="space-y-2">
             <div className="flex items-start gap-3 p-3 bg-[#F5F1E6] rounded-lg">
-              <div className="w-6 h-6 bg-[#E8481C] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-5 h-5 bg-[#E8481C] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-white text-xs font-bold">1</span>
               </div>
               <div>
-                <h4 className="font-semibold text-[#121212] font-figtree">Create Trade Pages</h4>
-                <p className="text-sm text-[#121212]/70 font-figtree">Use our template system to quickly create pages for all 43 trades</p>
+                <h4 className="font-semibold text-[#121212] font-figtree text-sm">Create Trade Pages</h4>
+                <p className="text-xs text-[#121212]/70 font-figtree">Use our template system to quickly create pages for all 43 trades</p>
               </div>
             </div>
             
             <div className="flex items-start gap-3 p-3 bg-[#F5F1E6] rounded-lg">
-              <div className="w-6 h-6 bg-[#E8481C] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-5 h-5 bg-[#E8481C] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-white text-xs font-bold">2</span>
               </div>
               <div>
-                <h4 className="font-semibold text-[#121212] font-figtree">Customize Content</h4>
-                <p className="text-sm text-[#121212]/70 font-figtree">Edit text, upload images, and customize each section</p>
+                <h4 className="font-semibold text-[#121212] font-figtree text-sm">Customize Content</h4>
+                <p className="text-xs text-[#121212]/70 font-figtree">Edit text, upload images, and customize each section</p>
               </div>
             </div>
             
             <div className="flex items-start gap-3 p-3 bg-[#F5F1E6] rounded-lg">
-              <div className="w-6 h-6 bg-[#E8481C] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-5 h-5 bg-[#E8481C] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-white text-xs font-bold">3</span>
               </div>
               <div>
-                <h4 className="font-semibold text-[#121212] font-figtree">Publish Pages</h4>
-                <p className="text-sm text-[#121212]/70 font-figtree">Review and publish your pages to make them live</p>
+                <h4 className="font-semibold text-[#121212] font-figtree text-sm">Publish Pages</h4>
+                <p className="text-xs text-[#121212]/70 font-figtree">Review and publish your pages to make them live</p>
               </div>
             </div>
           </div>
