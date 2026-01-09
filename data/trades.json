@@ -1,0 +1,45 @@
+[
+  {
+    "slug": "hi",
+    "title": "hi",
+    "metaDescription": "hi",
+    "heroSection": {
+      "title": "hello",
+      "description": "hellloow",
+      "backgroundImage": "/images/home/image7.jpg"
+    },
+    "overviewSection": {
+      "title": "services is good",
+      "content": "services is best",
+      "image": "/images/home/image4.jpg"
+    },
+    "servicesSection": {
+      "title": "Our Services",
+      "services": [
+        {
+          "title": "",
+          "description": "",
+          "icon": "wrench"
+        }
+      ]
+    },
+    "benefitsSection": {
+      "title": "Why Choose Us",
+      "benefits": [
+        {
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    "ctaSection": {
+      "title": "Get Started Today",
+      "description": "Contact us for a free consultation",
+      "buttonText": "Contact Us"
+    },
+    "published": true,
+    "id": "1767093999873",
+    "createdAt": "2025-12-30T11:26:39.873Z",
+    "updatedAt": "2025-12-30T11:26:39.873Z"
+  }
+]

@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+/* Liquid fill animation */
+@keyframes liquidFill {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  50% {
+    clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.liquid-fill {
+  animation: liquidFill 0.6s ease-out forwards;
+}
+
+/* Moving dots pattern animation */
+@keyframes moveDots {
+  0% {
+    backgroundPosition: 0 0;
+  }
+  100% {
+    backgroundPosition: 40px 40px;
+  }
+}
+
+/* Floating bubbles animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-15px);
+  }
+  75% {
+    transform: translateY(-25px) translateX(5px);
+  }
+}
+
+.animate-float {
+  animation: float ease-in-out infinite;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Fade In Zoom Animation */
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-zoom {
+  animation: fadeInZoom 0.7s ease-out forwards;
+}
+
+/* Scroll Animation Classes */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-slide-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-slide-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Infinite Scroll Animation */
+@keyframes scrollInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll-infinite {
+  animation: scrollInfinite 40s linear infinite;
+  display: flex;
+  width: fit-content;
+  will-change: transform;
+}
+
+.animate-scroll-infinite:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .animate-scroll-infinite {
+    animation-duration: 30s;
+  }
+}
+
+@media (min-width: 1920px) {
+  .animate-scroll-infinite {
+    animation-duration: 50s;
+  }
+}
+
+@media (min-width: 2560px) {
+  .animate-scroll-infinite {
+    animation-duration: 60s;
+  }
+}
+
+/* Vertical Scroll Animation */
+@keyframes scrollVerticalInfinite {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-33.333%);
+  }
+}
+
+.animate-scroll-vertical-infinite {
+  animation: scrollVerticalInfinite 30s linear infinite;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.animate-scroll-vertical-infinite:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .animate-scroll-vertical-infinite {
+    animation-duration: 25s;
+  }
+}
+
+@media (min-width: 1920px) {
+  .animate-scroll-vertical-infinite {
+    animation-duration: 40s;
+  }
+}
+
+/* Horizontal Scroll Animation for Mobile */
+@keyframes scrollHorizontalInfinite {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+/* Payment Methods Scroll Animation */
+@keyframes scrollPaymentMethods {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-payment-scroll {
+  animation: scrollPaymentMethods 30s linear infinite;
+  display: flex;
+  will-change: transform;
+}
+
+.animate-payment-scroll:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll-horizontal-infinite {
+  animation: scrollHorizontalInfinite 15s linear infinite;
+  display: flex;
+  flex-direction: row;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.animate-scroll-horizontal-infinite:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll-horizontal-infinite > * {
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Ultra-wide screen support */
+@media (min-width: 1920px) {
+  .hero-content-container {
+    max-width: min(100%, 120rem) !important;
+  }
+  
+  .hero-inner-content {
+    max-width: min(100%, clamp(20rem, 60vw, 120rem)) !important;
+  }
+  
+  .hero-description {
+    max-width: min(100%, clamp(20rem, 50vw, 80rem)) !important;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hero-content-container {
+    max-width: min(100%, 140rem) !important;
+  }
+  
+  .hero-inner-content {
+    max-width: min(100%, clamp(20rem, 55vw, 140rem)) !important;
+  }
+  
+  .hero-description {
+    max-width: min(100%, clamp(20rem, 45vw, 90rem)) !important;
+  }
+}
+
+@media (min-width: 3840px) {
+  .hero-content-container {
+    max-width: min(100%, 160rem) !important;
+  }
+  
+  .hero-inner-content {
+    max-width: min(100%, clamp(20rem, 50vw, 160rem)) !important;
+  }
+  
+  .hero-description {
+    max-width: min(100%, clamp(20rem, 40vw, 100rem)) !important;
+  }
+}
+/* Promotional Strip Scroll Animation */
+@keyframes promoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-promo-scroll {
+  animation: promoScroll 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-promo-scroll:hover {
+  animation-play-state: paused;
+}
