@@ -25,7 +25,7 @@ export default function PreliminaryEstimatingFactorsSection() {
         {/* Content Paragraphs */}
         <div className="space-y-5 sm:space-y-6 md:space-y-7 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree w-full">
           <p>
-            While performing a bill of material based on previous projects' data, we make assumptions and adjustments with respect to time, location, type, and size of the project.
+            While performing a bill of material based on previous projects&apos; data, we make assumptions and adjustments with respect to time, location, type, and size of the project.
           </p>
           <p>
             <strong className="text-[#121212] font-semibold">Time Adjustments:</strong> We modify the project cost to the time of the start of construction because these estimates are calculated two or more years in advance to construction therefore cost must be identified with respect to the future. It is adjusted using a time index which includes relative inflation or deflation with respect to time due to factors like labor rates, material costs, interest rates, etc.

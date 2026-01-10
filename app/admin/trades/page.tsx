@@ -49,6 +49,9 @@ export default function AdminTradesListPage() {
 
       if (response.ok) {
         setPages(pages.filter(p => p.id !== id))
+        
+        // Trigger custom event to notify navbar to refresh
+        window.dispatchEvent(new CustomEvent('tradesUpdated'))
       }
     } catch (error) {
       console.error('Error deleting page:', error)

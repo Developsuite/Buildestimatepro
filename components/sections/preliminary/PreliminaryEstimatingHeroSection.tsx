@@ -36,7 +36,7 @@ export default function PreliminaryEstimatingHeroSection() {
               Preliminary Estimate Services
             </h1>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 leading-relaxed font-figtree px-2 sm:px-4 md:px-0 mb-4 sm:mb-6 md:mb-8">
-              Are you somewhere in the range of 30%, 60%, and 90% of your drawing plans? Or frustrated by preparing estimates with incomplete drawing plans? Or in need of a quick preliminary estimate to check if the project is in your client's budget? We can serve you by providing fast and detailed preliminary estimates.
+              Are you somewhere in the range of 30%, 60%, and 90% of your drawing plans? Or frustrated by preparing estimates with incomplete drawing plans? Or in need of a quick preliminary estimate to check if the project is in your client&apos;s budget? We can serve you by providing fast and detailed preliminary estimates.
             </p>
             
             {/* CTA Buttons */}

@@ -46,7 +46,7 @@ export default function ContactFormSection() {
           {/* Form Section */}
           <div>
             <p className="text-sm sm:text-base text-[#121212] leading-relaxed font-figtree mb-8 sm:mb-10 md:mb-12">
-              We'd love to hear from you! Whether you have a new project in mind, need expert consultation, or just want to learn more about our work, our team is ready to assist. Fill the below form to resolve any queries or to ask for estimation.
+              We&apos;d love to hear from you! Whether you have a new project in mind, need expert consultation, or just want to learn more about our work, our team is ready to assist. Fill the below form to resolve any queries or to ask for estimation.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">

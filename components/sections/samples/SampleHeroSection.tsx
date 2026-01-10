@@ -7,7 +7,7 @@ export default function SampleHeroSection() {
   const [ref, isVisible] = useScrollAnimation()
 
   return (
-    <section ref={ref} className={`relative w-full h-[280px] sm:h-[300px] md:h-[320px] lg:h-[350px] overflow-hidden scroll-fade-in-up ${isVisible ? 'visible' : ''}`}>
+    <section ref={ref} className={`relative w-full h-[220px] sm:h-[240px] md:h-[260px] lg:h-[280px] overflow-hidden scroll-fade-in-up ${isVisible ? 'visible' : ''}`}>
       {/* Background Image */}
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center"

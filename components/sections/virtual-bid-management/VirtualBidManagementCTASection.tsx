@@ -39,7 +39,7 @@ export default function VirtualBidManagementCTASection() {
 
               {/* Description */}
               <p className="text-sm sm:text-base md:text-lg text-white/80 mb-6 sm:mb-8 leading-relaxed font-figtree">
-                Hiring a Virtual Bid Manager from BuildEstimatePro is more than an investment – it's a strategic move. Streamline your bidding process, win more contracts, and secure business growth.
+                Hiring a Virtual Bid Manager from BuildEstimatePro is more than an investment – it&apos;s a strategic move. Streamline your bidding process, win more contracts, and secure business growth.
               </p>
 
               {/* CTA Buttons */}

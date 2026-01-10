@@ -3,20 +3,21 @@
 import { useEffect, useState } from 'react'
 import AdminLayout from '@/components/admin/AdminLayout'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 interface BlogPost {
   id: string
-  slug: string
   title: string
-  excerpt: string
-  published: boolean
-  publishedAt: string
-  updatedAt: string
+  slug: string
   author: string
-  featuredImage: string
+  published: boolean
+  publishedAt?: string
+  updatedAt: string
+  category: string
 }
 
 export default function AdminBlogListPage() {
+  const router = useRouter()
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -59,8 +60,7 @@ export default function AdminBlogListPage() {
 
   const filteredPosts = posts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.slug.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+                         post.author.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesFilter = filterStatus === 'all' || 
                          (filterStatus === 'published' && post.published) ||
                          (filterStatus === 'draft' && !post.published)
@@ -75,7 +75,7 @@ export default function AdminBlogListPage() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-[#121212] font-figtree">Blog Posts</h1>
-            <p className="text-[#121212]/70 font-figtree mt-1">Manage your blog content</p>
+            <p className="text-[#121212]/70 font-figtree mt-1">Manage all your blog content</p>
           </div>
           <Link
             href="/admin/blog/new"
@@ -86,57 +86,6 @@ export default function AdminBlogListPage() {
             </svg>
             Create New Post
           </Link>
-        </div>
-
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-xl p-6 border border-[#121212]/10">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </div>
-              <span className="text-3xl font-bold text-[#121212] font-figtree">
-                {posts.length}
-              </span>
-            </div>
-            <h3 className="text-lg font-semibold text-[#121212]/70 font-figtree">
-              Total Posts
-            </h3>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 border border-[#121212]/10">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <span className="text-3xl font-bold text-[#121212] font-figtree">
-                {posts.filter(p => p.published).length}
-              </span>
-            </div>
-            <h3 className="text-lg font-semibold text-[#121212]/70 font-figtree">
-              Published
-            </h3>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 border border-[#121212]/10">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center text-white">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                </svg>
-              </div>
-              <span className="text-3xl font-bold text-[#121212] font-figtree">
-                {posts.filter(p => !p.published).length}
-              </span>
-            </div>
-            <h3 className="text-lg font-semibold text-[#121212]/70 font-figtree">
-              Drafts
-            </h3>
-          </div>
         </div>
 
         {/* Filters */}
@@ -182,7 +131,7 @@ export default function AdminBlogListPage() {
           ) : filteredPosts.length === 0 ? (
             <div className="p-12 text-center">
               <svg className="w-16 h-16 mx-auto text-[#121212]/20 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               <p className="text-xl font-semibold text-[#121212] mb-2 font-figtree">No posts found</p>
               <p className="text-[#121212]/70 font-figtree">Create your first blog post to get started</p>
@@ -192,10 +141,11 @@ export default function AdminBlogListPage() {
               <table className="w-full">
                 <thead className="bg-[#F5F1E6]">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#121212] font-figtree">Post</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#121212] font-figtree">Title</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-[#121212] font-figtree">Author</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#121212] font-figtree">Category</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-[#121212] font-figtree">Status</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#121212] font-figtree">Published</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#121212] font-figtree">Last Updated</th>
                     <th className="px-6 py-4 text-right text-sm font-semibold text-[#121212] font-figtree">Actions</th>
                   </tr>
                 </thead>
@@ -203,25 +153,18 @@ export default function AdminBlogListPage() {
                   {filteredPosts.map((post) => (
                     <tr key={post.id} className="hover:bg-[#F5F1E6]/50 transition-colors">
                       <td className="px-6 py-4">
-                        <div className="flex items-start gap-4">
-                          {post.featuredImage && (
-                            <img
-                              src={post.featuredImage}
-                              alt={post.title}
-                              className="w-16 h-12 object-cover rounded-lg flex-shrink-0"
-                            />
-                          )}
-                          <div className="min-w-0 flex-1">
-                            <p className="font-medium text-[#121212] font-figtree truncate">{post.title}</p>
-                            <p className="text-sm text-[#121212]/60 font-figtree line-clamp-2">{post.excerpt}</p>
-                            <code className="text-xs text-[#121212]/50 bg-[#F5F1E6] px-2 py-1 rounded font-figtree mt-1 inline-block">
-                              /blog/{post.slug}
-                            </code>
-                          </div>
+                        <div>
+                          <p className="font-medium text-[#121212] font-figtree">{post.title}</p>
+                          <p className="text-sm text-[#121212]/60 font-figtree">/{post.slug}</p>
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <p className="text-sm text-[#121212]/70 font-figtree">{post.author}</p>
+                        <p className="text-sm text-[#121212] font-figtree">{post.author}</p>
+                      </td>
+                      <td className="px-6 py-4">
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-[#F5F1E6] text-[#121212] font-figtree">
+                          {post.category}
+                        </span>
                       </td>
                       <td className="px-6 py-4">
                         <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium font-figtree ${
@@ -233,7 +176,7 @@ export default function AdminBlogListPage() {
                         </span>
                       </td>
                       <td className="px-6 py-4 text-sm text-[#121212]/70 font-figtree">
-                        {post.published ? new Date(post.publishedAt).toLocaleDateString() : '-'}
+                        {new Date(post.updatedAt).toLocaleDateString()}
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center justify-end gap-2">
@@ -246,6 +189,19 @@ export default function AdminBlogListPage() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                             </svg>
                           </Link>
+                          {post.published && (
+                            <Link
+                              href={`/blog/${post.slug}`}
+                              target="_blank"
+                              className="p-2 text-[#E8481C] hover:bg-[#E8481C]/10 rounded-lg transition-colors"
+                              title="View"
+                            >
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                              </svg>
+                            </Link>
+                          )}
                           <button
                             onClick={() => handleDelete(post.id)}
                             className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"

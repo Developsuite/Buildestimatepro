@@ -49,7 +49,7 @@ export default function ContactInfoSection() {
                   Contact Sales
                 </h2>
                 <p className="text-sm sm:text-base text-[#121212] leading-relaxed font-figtree">
-                  Whether you're looking for detailed information, need a comprehensive questions about how we can meet your unique requirements.
+                  Whether you&apos;re looking for detailed information, need a comprehensive questions about how we can meet your unique requirements.
                 </p>
               </div>
 
@@ -71,7 +71,7 @@ export default function ContactInfoSection() {
                   Message with us
                 </h3>
                 <p className="text-sm sm:text-base text-[#121212] mb-2 font-figtree">
-                  We're usually replying within 24 hours.
+                  We&apos;re usually replying within 24 hours.
                 </p>
                 <a 
                   href="mailto:contact@buildestimatepro.com" 

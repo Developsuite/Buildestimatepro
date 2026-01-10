@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getPublishedTradePages, getTradePageBySlug } from '@/lib/tradeData'
+import { getTradePageBySlug } from '@/lib/tradeData'
 import TradePageHeroSection from '@/components/sections/trades/TradePageHeroSection'
 import TradePageOverviewSection from '@/components/sections/trades/TradePageOverviewSection'
 import TradePageServicesSection from '@/components/sections/trades/TradePageServicesSection'
@@ -8,39 +8,41 @@ import TradePageCTASection from '@/components/sections/trades/TradePageCTASectio
 import FooterSection from '@/components/sections/home/FooterSection'
 import { Metadata } from 'next'
 
-// Generate static params for all published trade pages
-export async function generateStaticParams() {
-  const pages = getPublishedTradePages()
-  return pages.map((page) => ({
-    slug: page.slug,
-  }))
-}
+// Force dynamic rendering for Cloudflare Pages compatibility
+export const dynamic = 'force-dynamic'
 
 // Generate metadata
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = params
-  const page = getTradePageBySlug(slug)
+  
+  try {
+    const page = await getTradePageBySlug(slug)
 
-  if (!page) {
-    return {
-      title: 'Page Not Found | BuildEstimatePro',
+    if (!page) {
+      return {
+        title: 'Page Not Found | BuildEstimatePro',
+      }
     }
-  }
 
-  return {
-    title: `${page.title} | BuildEstimatePro`,
-    description: page.metaDescription || `Professional ${page.title} for your construction projects.`,
-    openGraph: {
+    return {
       title: `${page.title} | BuildEstimatePro`,
       description: page.metaDescription || `Professional ${page.title} for your construction projects.`,
-      type: 'website',
-    },
+      openGraph: {
+        title: `${page.title} | BuildEstimatePro`,
+        description: page.metaDescription || `Professional ${page.title} for your construction projects.`,
+        type: 'website',
+      },
+    }
+  } catch {
+    return {
+      title: 'Trade Services | BuildEstimatePro',
+    }
   }
 }
 
-export default function TradePage({ params }: { params: { slug: string } }) {
+export default async function TradePage({ params }: { params: { slug: string } }) {
   const { slug } = params
-  const page = getTradePageBySlug(slug)
+  const page = await getTradePageBySlug(slug)
 
   if (!page || !page.published) {
     notFound()

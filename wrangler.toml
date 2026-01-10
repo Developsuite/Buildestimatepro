@@ -1,0 +1,18 @@
+# Cloudflare Workers configuration
+# This file is optional for Cloudflare Pages
+# Only needed if you want to use Cloudflare D1 or Workers KV
+
+name = "buildestimatepro"
+compatibility_date = "2024-01-01"
+
+# Uncomment if you want to use D1 database
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "buildestimatepro-db"
+# database_id = "your-database-id-here"
+
+# Uncomment if you want to use Workers KV
+# [[kv_namespaces]]
+# binding = "TRADES_KV"
+# id = "your-kv-namespace-id-here"
+

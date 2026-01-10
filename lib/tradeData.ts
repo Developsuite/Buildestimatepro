@@ -1,5 +1,4 @@
-import fs from 'fs'
-import path from 'path'
+import { getSupabase, TradePageDB } from './supabase'
 
 // Define the trade page interface
 export interface TradePage {
@@ -43,93 +42,143 @@ export interface TradePage {
   updatedAt: string
 }
 
-const DATA_FILE = path.join(process.cwd(), 'data', 'trades.json')
+// Convert DB format to frontend format
+function dbToFrontend(page: TradePageDB): TradePage {
+  return {
+    id: page.id,
+    slug: page.slug,
+    title: page.title,
+    metaDescription: page.meta_description,
+    category: page.category,
+    heroSection: page.hero_section,
+    overviewSection: page.overview_section,
+    servicesSection: page.services_section,
+    benefitsSection: page.benefits_section,
+    ctaSection: page.cta_section,
+    published: page.published,
+    createdAt: page.created_at,
+    updatedAt: page.updated_at
+  }
+}
 
-// Ensure data directory exists
-function ensureDataDir() {
-  const dataDir = path.join(process.cwd(), 'data')
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true })
-  }
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify([]))
-  }
+// Convert frontend format to DB format
+function frontendToDb(page: Partial<TradePage>): Partial<TradePageDB> {
+  const dbPage: Partial<TradePageDB> = {}
+  
+  if (page.slug !== undefined) dbPage.slug = page.slug
+  if (page.title !== undefined) dbPage.title = page.title
+  if (page.metaDescription !== undefined) dbPage.meta_description = page.metaDescription
+  if (page.category !== undefined) dbPage.category = page.category
+  if (page.heroSection !== undefined) dbPage.hero_section = page.heroSection
+  if (page.overviewSection !== undefined) dbPage.overview_section = page.overviewSection
+  if (page.servicesSection !== undefined) dbPage.services_section = page.servicesSection
+  if (page.benefitsSection !== undefined) dbPage.benefits_section = page.benefitsSection
+  if (page.ctaSection !== undefined) dbPage.cta_section = page.ctaSection
+  if (page.published !== undefined) dbPage.published = page.published
+  
+  return dbPage
 }
 
 // Get all trade pages
-export function getAllTradePages(): TradePage[] {
-  ensureDataDir()
-  const data = fs.readFileSync(DATA_FILE, 'utf-8')
-  return JSON.parse(data) as TradePage[]
+export async function getAllTradePages(): Promise<TradePage[]> {
+  const { data, error } = await getSupabase()
+    .from('trades')
+    .select('*')
+    .order('created_at', { ascending: false })
+  
+  if (error) throw error
+  return (data || []).map(dbToFrontend)
 }
 
 // Get single trade page by slug
-export function getTradePageBySlug(slug: string): TradePage | null {
-  const pages = getAllTradePages()
-  return pages.find(page => page.slug === slug) || null
+export async function getTradePageBySlug(slug: string): Promise<TradePage | null> {
+  const { data, error } = await getSupabase()
+    .from('trades')
+    .select('*')
+    .eq('slug', slug)
+    .single()
+  
+  if (error) {
+    if (error.code === 'PGRST116') return null
+    throw error
+  }
+  return data ? dbToFrontend(data) : null
 }
 
 // Get single trade page by ID
-export function getTradePageById(id: string): TradePage | null {
-  const pages = getAllTradePages()
-  return pages.find(page => page.id === id) || null
+export async function getTradePageById(id: string): Promise<TradePage | null> {
+  const { data, error } = await getSupabase()
+    .from('trades')
+    .select('*')
+    .eq('id', id)
+    .single()
+  
+  if (error) {
+    if (error.code === 'PGRST116') return null
+    throw error
+  }
+  return data ? dbToFrontend(data) : null
 }
 
 // Create new trade page
-export function createTradePage(page: Omit<TradePage, 'id' | 'createdAt' | 'updatedAt'>): TradePage {
-  ensureDataDir()
-  const pages = getAllTradePages()
-  
-  const newPage: TradePage = {
-    ...page,
-    id: Date.now().toString(),
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+export async function createTradePage(page: Omit<TradePage, 'id' | 'createdAt' | 'updatedAt'>): Promise<TradePage> {
+  const now = new Date().toISOString()
+  const dbPage = {
+    ...frontendToDb(page),
+    created_at: now,
+    updated_at: now
   }
   
-  pages.push(newPage)
-  fs.writeFileSync(DATA_FILE, JSON.stringify(pages, null, 2))
+  const { data, error } = await getSupabase()
+    .from('trades')
+    .insert(dbPage)
+    .select()
+    .single()
   
-  return newPage
+  if (error) throw error
+  return dbToFrontend(data)
 }
 
 // Update trade page
-export function updateTradePage(id: string, updates: Partial<TradePage>): TradePage | null {
-  ensureDataDir()
-  const pages = getAllTradePages()
-  const index = pages.findIndex(page => page.id === id)
-  
-  if (index === -1) return null
-  
-  pages[index] = {
-    ...pages[index],
-    ...updates,
-    id: pages[index].id,
-    createdAt: pages[index].createdAt,
-    updatedAt: new Date().toISOString()
+export async function updateTradePage(id: string, updates: Partial<TradePage>): Promise<TradePage | null> {
+  const dbUpdates: Partial<TradePageDB> = {
+    ...frontendToDb(updates),
+    updated_at: new Date().toISOString()
   }
   
-  fs.writeFileSync(DATA_FILE, JSON.stringify(pages, null, 2))
+  const { data, error } = await getSupabase()
+    .from('trades')
+    .update(dbUpdates)
+    .eq('id', id)
+    .select()
+    .single()
   
-  return pages[index]
+  if (error) {
+    if (error.code === 'PGRST116') return null
+    throw error
+  }
+  return data ? dbToFrontend(data) : null
 }
 
 // Delete trade page
-export function deleteTradePage(id: string): boolean {
-  ensureDataDir()
-  const pages = getAllTradePages()
-  const filteredPages = pages.filter(page => page.id !== id)
+export async function deleteTradePage(id: string): Promise<boolean> {
+  const { error } = await getSupabase()
+    .from('trades')
+    .delete()
+    .eq('id', id)
   
-  if (filteredPages.length === pages.length) return false
-  
-  fs.writeFileSync(DATA_FILE, JSON.stringify(filteredPages, null, 2))
-  
+  if (error) throw error
   return true
 }
 
 // Get published pages only
-export function getPublishedTradePages(): TradePage[] {
-  return getAllTradePages().filter(page => page.published)
+export async function getPublishedTradePages(): Promise<TradePage[]> {
+  const { data, error } = await getSupabase()
+    .from('trades')
+    .select('*')
+    .eq('published', true)
+    .order('created_at', { ascending: false })
+  
+  if (error) throw error
+  return (data || []).map(dbToFrontend)
 }
-
-

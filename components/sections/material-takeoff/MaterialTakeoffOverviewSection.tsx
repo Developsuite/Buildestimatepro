@@ -26,7 +26,7 @@ export default function MaterialTakeoffOverviewSection() {
             </h2>
             <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg text-[#121212]/70 font-figtree leading-relaxed">
               <p>
-                The right amount of material is one of the most important factors for project cost estimation. Without knowing the exact material quantity, it's impossible to reach the accurate budget amount needed to complete your project. Furthermore, material quantity provides crucial information about how much budget you should allocate for required materials and items.
+                The right amount of material is one of the most important factors for project cost estimation. Without knowing the exact material quantity, it&apos;s impossible to reach the accurate budget amount needed to complete your project. Furthermore, material quantity provides crucial information about how much budget you should allocate for required materials and items.
               </p>
               <p>
                 Therefore, BuildEstimatePro assists clients with accurate material estimations. We want you to use your valuable resources effectively without wasting anything. Our estimation reports help you manage the supply chain and ensure the availability of resources on the construction site without any irregularity.

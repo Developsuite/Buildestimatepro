@@ -56,7 +56,7 @@ export default function ResidentialEstimatingServicesSection() {
             Home Building Estimating Services Tailored To Your Needs
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 max-w-4xl font-figtree leading-relaxed">
-            Accurate estimates play a vital role in the competitive construction landscape. Our experienced residential building cost estimators employ cutting-edge technology and construction estimating software to provide you with meticulous material takeoffs and reliable residential estimates. Whether you're embarking on new construction or planning renovations for single-family residential houses or multi-family projects, our precise estimations lay the foundation for successful project execution.
+            Accurate estimates play a vital role in the competitive construction landscape. Our experienced residential building cost estimators employ cutting-edge technology and construction estimating software to provide you with meticulous material takeoffs and reliable residential estimates. Whether you&apos;re embarking on new construction or planning renovations for single-family residential houses or multi-family projects, our precise estimations lay the foundation for successful project execution.
           </p>
         </div>
 

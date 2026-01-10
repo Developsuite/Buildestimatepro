@@ -38,7 +38,7 @@ export default function CostEstimatingServicesSection() {
             Comprehensive Construction Cost Estimating Services
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 max-w-3xl mx-0 font-figtree leading-relaxed">
-            Our construction cost estimates encompass a wide range of essential components, ensuring a holistic approach to cost management throughout your project's lifecycle. From initial feasibility studies to bid evaluation and design development to change order management, we have the expertise to support your needs.
+            Our construction cost estimates encompass a wide range of essential components, ensuring a holistic approach to cost management throughout your project&apos;s lifecycle. From initial feasibility studies to bid evaluation and design development to change order management, we have the expertise to support your needs.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export default function CostEstimatingServicesSection() {
         {/* Bottom CTA */}
         <div className="text-center">
           <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 mb-4 sm:mb-6 font-figtree">
-              If you're searching for professional construction cost estimating companies you can rely on, look no further than BuildEstimatePro. We are eager to assist you in achieving your project's goals.
+              If you&apos;re searching for professional construction cost estimating companies you can rely on, look no further than BuildEstimatePro. We are eager to assist you in achieving your project&apos;s goals.
             </p>
           <Link
             href="/contact"

@@ -1,83 +1,78 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getTradePageById, updateTradePage, deleteTradePage } from '@/lib/tradeData'
+import { getBlogPostById, updateBlogPost, deleteBlogPost } from '@/lib/blogData'
 
-// GET - Get single trade page
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    const page = await getTradePageById(params.id)
+    const post = await getBlogPostById(params.id)
     
-    if (!page) {
+    if (!post) {
       return NextResponse.json(
-        { success: false, error: 'Page not found' },
+        { success: false, error: 'Blog post not found' },
         { status: 404 }
       )
     }
     
     return NextResponse.json({
       success: true,
-      page
+      post
     })
   } catch (error) {
-    console.error('Error fetching trade:', error)
+    console.error('Error fetching blog post:', error)
     return NextResponse.json(
-      { success: false, error: 'Failed to fetch page' },
+      { success: false, error: 'Failed to fetch blog post' },
       { status: 500 }
     )
   }
 }
 
-// PUT - Update trade page
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    const body = await request.json()
+    const data = await request.json()
     
-    const updatedPage = await updateTradePage(params.id, body)
+    const updatedPost = await updateBlogPost(params.id, data)
     
-    if (!updatedPage) {
+    if (!updatedPost) {
       return NextResponse.json(
-        { success: false, error: 'Page not found' },
+        { success: false, error: 'Blog post not found' },
         { status: 404 }
       )
     }
     
     return NextResponse.json({
       success: true,
-      page: updatedPage
+      post: updatedPost
     })
   } catch (error) {
-    console.error('Error updating trade:', error)
+    console.error('Error updating blog post:', error)
     return NextResponse.json(
-      { success: false, error: 'Failed to update page' },
+      { success: false, error: 'Failed to update blog post' },
       { status: 500 }
     )
   }
 }
 
-// DELETE - Delete trade page
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    await deleteTradePage(params.id)
+    await deleteBlogPost(params.id)
     
     return NextResponse.json({
-      success: true
+      success: true,
+      message: 'Blog post deleted successfully'
     })
   } catch (error) {
-    console.error('Error deleting trade:', error)
+    console.error('Error deleting blog post:', error)
     return NextResponse.json(
-      { success: false, error: 'Failed to delete page' },
+      { success: false, error: 'Failed to delete blog post' },
       { status: 500 }
     )
   }
 }
-
-
-

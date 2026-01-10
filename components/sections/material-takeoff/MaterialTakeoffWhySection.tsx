@@ -46,7 +46,7 @@ export default function MaterialTakeoffWhySection() {
                 They know how to generate the right material takeoff report. Our reports carry a 98% accuracy rate with 100% assurance of resource availability on the construction site. Counting and calculating items and materials is now not your problem.
               </p>
               <p>
-                Moreover, it is our aim to support new contractors and small businesses by keeping our service prices highly reasonable for everyone. We also offer customized pricing plans according to your project's requirements. Now there is no need to face irregular resource availability or budget overruns. Take the calculated steps with our excellent material estimating services.
+                Moreover, it is our aim to support new contractors and small businesses by keeping our service prices highly reasonable for everyone. We also offer customized pricing plans according to your project&apos;s requirements. Now there is no need to face irregular resource availability or budget overruns. Take the calculated steps with our excellent material estimating services.
               </p>
             </div>
 

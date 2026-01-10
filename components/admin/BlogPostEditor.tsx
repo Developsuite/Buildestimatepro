@@ -10,6 +10,7 @@ interface BlogPostData {
   content: string
   featuredImage: string
   author: string
+  category: string
   tags: string[]
   metaDescription: string
   published: boolean
@@ -34,6 +35,7 @@ export default function BlogPostEditor({ postId }: BlogPostEditorProps) {
     content: '',
     featuredImage: '',
     author: 'Admin',
+    category: 'General',
     tags: [],
     metaDescription: '',
     published: false
@@ -310,6 +312,24 @@ export default function BlogPostEditor({ postId }: BlogPostEditorProps) {
                   className="w-full px-4 py-3 border border-[#121212]/20 rounded-lg focus:outline-none focus:border-[#E8481C] focus:ring-2 focus:ring-[#E8481C]/20 font-figtree"
                   placeholder="Author name"
                 />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-[#121212] mb-2 font-figtree">
+                  Category
+                </label>
+                <select
+                  value={formData.category}
+                  onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                  className="w-full px-4 py-3 border border-[#121212]/20 rounded-lg focus:outline-none focus:border-[#E8481C] focus:ring-2 focus:ring-[#E8481C]/20 font-figtree"
+                >
+                  <option value="General">General</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Best Practices">Best Practices</option>
+                  <option value="Industry News">Industry News</option>
+                  <option value="Tips & Tricks">Tips & Tricks</option>
+                  <option value="Case Studies">Case Studies</option>
+                </select>
               </div>
 
               <div>

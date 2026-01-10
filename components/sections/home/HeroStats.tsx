@@ -26,7 +26,7 @@ export default function HeroStats() {
         {/* Testimonial Card */}
         <div className="bg-white/5 backdrop-blur-[8px] rounded-[10px] p-[18px] border border-white/10">
           <p className="text-sm text-white mb-4 leading-relaxed font-figtree">
-            "From the initial concept to the final execution, Titen's team demonstrated unmatched creativity, professionalism, and technical expertise, delivering a commercial space that exceeded our highest expectations."
+            &quot;From the initial concept to the final execution, Titen&apos;s team demonstrated unmatched creativity, professionalism, and technical expertise, delivering a commercial space that exceeded our highest expectations.&quot;
           </p>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">

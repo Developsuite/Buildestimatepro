@@ -24,7 +24,7 @@ export default function PaymentMethodsSection() {
             Our Payment Methods
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree max-w-3xl">
-            We prioritize secure and convenient online payment options for your peace of mind. Accept credit cards, debit cards, and PayPal. After reviewing your project, we'll send a detailed quote and invoice. Once payment is confirmed, your comprehensive budget estimate will be delivered within 24-48 hours.
+            We prioritize secure and convenient online payment options for your peace of mind. Accept credit cards, debit cards, and PayPal. After reviewing your project, we&apos;ll send a detailed quote and invoice. Once payment is confirmed, your comprehensive budget estimate will be delivered within 24-48 hours.
           </p>
         </div>
 

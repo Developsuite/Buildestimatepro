@@ -27,7 +27,7 @@ export default function ResidentialEstimatingOverviewSection() {
             
             <div className="space-y-4 sm:space-y-5 md:space-y-6 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree">
               <p>
-                With our expertise in residential construction estimating and architectural assessments, we strive to provide comprehensive solutions tailored to your specific needs. Whether you're a Homeowner, Architect, Contractor, or Builder, Lenders, and Investors, our team of professional estimators is here to assist you in achieving your project goals efficiently and cost-effectively.
+                With our expertise in residential construction estimating and architectural assessments, we strive to provide comprehensive solutions tailored to your specific needs. Whether you&apos;re a Homeowner, Architect, Contractor, or Builder, Lenders, and Investors, our team of professional estimators is here to assist you in achieving your project goals efficiently and cost-effectively.
               </p>
             </div>
 

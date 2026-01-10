@@ -126,6 +126,8 @@ export default function TradePageEditor({ pageId }: TradePageEditorProps) {
       })
 
       if (response.ok) {
+        // Trigger custom event to notify navbar to refresh
+        window.dispatchEvent(new CustomEvent('tradesUpdated'))
         router.push('/admin/trades')
       }
     } catch (error) {

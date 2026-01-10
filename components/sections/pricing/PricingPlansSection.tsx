@@ -79,7 +79,7 @@ export default function PricingPlansSection() {
             Client-Focused Pricing Solutions
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree max-w-3xl">
-            We understand the importance of cost-effective solutions. That's why BuildEstimatePro offers flexible pricing plans designed to fit your project requirements and budget. Browse our packages below or request a custom solution tailored specifically to your needs.
+            We understand the importance of cost-effective solutions. That&apos;s why BuildEstimatePro offers flexible pricing plans designed to fit your project requirements and budget. Browse our packages below or request a custom solution tailored specifically to your needs.
           </p>
         </div>
 
@@ -200,7 +200,7 @@ export default function PricingPlansSection() {
         {/* Additional Info */}
         <div className="mt-12 sm:mt-14 md:mt-16 text-center">
           <p className="text-sm sm:text-base text-[#121212]/70 font-figtree mb-4">
-            Need a custom solution? We're here to help you find the perfect fit.
+            Need a custom solution? We&apos;re here to help you find the perfect fit.
           </p>
           <Link
             href="/contact"

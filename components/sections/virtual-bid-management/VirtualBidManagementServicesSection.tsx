@@ -100,7 +100,7 @@ export default function VirtualBidManagementServicesSection() {
             Expert Construction <span className="text-[#E8481C]">Bid Management</span> Services
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 max-w-4xl font-figtree leading-relaxed">
-            Our Virtual Bid Manager isn't just a service; it's your remote bidding partner. Imagine having an expert by your side, remotely assisting you with every facet of the bid management process.
+            Our Virtual Bid Manager isn&apos;t just a service; it&apos;s your remote bidding partner. Imagine having an expert by your side, remotely assisting you with every facet of the bid management process.
           </p>
         </div>
 

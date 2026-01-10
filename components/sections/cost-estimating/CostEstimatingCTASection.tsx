@@ -28,7 +28,7 @@ export default function CostEstimatingCTASection() {
             <div className="max-w-4xl mx-auto text-center">
               {/* Heading */}
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 font-figtree leading-tight">
-                Let's Discuss Your Construction Estimating Needs
+                Let&apos;s Discuss Your Construction Estimating Needs
               </h2>
               <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 leading-relaxed mb-6 sm:mb-8 md:mb-10 font-figtree max-w-2xl mx-auto">
                 Ready to experience the difference with BuildEstimatePro? Take the next step towards accurate construction estimates and successful projects. Contact us today to request a quote with 30% off tailored to your specific needs. Our friendly team is here to answer your questions, provide guidance, and offer solutions that propel your construction endeavors forward.

@@ -89,7 +89,13 @@ export default function Navbar() {
       fetchTrades()
     }
 
+    // Listen for custom trades update event
+    const handleTradesUpdate = () => {
+      fetchTrades()
+    }
+
     window.addEventListener('focus', handleFocus)
+    window.addEventListener('tradesUpdated', handleTradesUpdate)
 
     return () => {
       if (hoverTimeoutRef.current) {
@@ -99,6 +105,7 @@ export default function Navbar() {
         clearTimeout(tradesHoverTimeoutRef.current)
       }
       window.removeEventListener('focus', handleFocus)
+      window.removeEventListener('tradesUpdated', handleTradesUpdate)
     }
   }, [])
 
@@ -133,6 +140,7 @@ export default function Navbar() {
     { name: 'Services', href: '/services', active: false, hasDropdown: true, isServices: true },
     { name: 'Trades', href: '/trades', active: false, hasDropdown: true, isTrades: true },
     { name: 'Samples', href: '/samples', active: false },
+    { name: 'Blog', href: '/blog', active: false },
     { name: 'Pricing', href: '/pricing', active: false },
     { name: 'About Us', href: '/about', active: false },
     { name: 'Contact Us', href: '/contact', active: false },
@@ -249,19 +257,19 @@ export default function Navbar() {
                   {/* Trades Dropdown Menu */}
                   {link.isTrades && isTradesHovered && trades.length > 0 && (
                     <div 
-                      className="absolute top-full left-0 mt-2 w-[600px] bg-[#F5F1E6] shadow-2xl rounded-lg border border-gray-200 overflow-hidden z-50 animate-fade-in-up"
+                      className={`absolute top-full left-0 mt-2 ${trades.length === 1 ? 'w-[300px]' : 'w-[600px]'} bg-[#F5F1E6] shadow-2xl rounded-lg border border-gray-200 overflow-hidden z-50 animate-fade-in-up`}
                       onMouseEnter={handleTradesMouseEnter}
                       onMouseLeave={handleTradesMouseLeave}
                     >
-                      <div className="grid grid-cols-2 max-h-[400px] overflow-y-auto">
+                      <div className={`${trades.length === 1 ? 'grid-cols-1' : 'grid grid-cols-2'} max-h-[400px] overflow-y-auto`}>
                         {trades.map((trade, index) => (
                           <Link
                             key={trade.id}
                             href={`/trades/${trade.slug}`}
                             className={`group relative flex items-center justify-between gap-4 p-4 hover:bg-white/50 transition-colors duration-200 ${
-                              index % 2 === 0 ? 'border-r border-gray-200' : ''
+                              trades.length > 1 && index % 2 === 0 ? 'border-r border-gray-200' : ''
                             } ${
-                              index < trades.length - 2 ? 'border-b border-gray-200' : ''
+                              index < trades.length - (trades.length > 1 ? 2 : 1) ? 'border-b border-gray-200' : ''
                             }`}
                             onClick={() => setIsTradesHovered(false)}
                           >

@@ -3,7 +3,7 @@ import { getPublishedTradePages } from '@/lib/tradeData'
 
 export async function GET() {
   try {
-    const trades = getPublishedTradePages()
+    const trades = await getPublishedTradePages()
     
     // Return only the necessary fields for the navbar
     const navbarTrades = trades.map(trade => ({

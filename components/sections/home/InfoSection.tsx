@@ -33,7 +33,7 @@ export default function InfoSection() {
             
             <div className="space-y-4 sm:space-y-5 md:space-y-6">
               <p className="text-xs sm:text-sm md:text-base text-[#121212]/80 leading-relaxed font-figtree">
-                Over 85% of construction projects struggle with delays and budget overruns due to poor planning and inaccurate estimates. That's why having a clear cost breakdown and a well-structured budget is essential.
+                Over 85% of construction projects struggle with delays and budget overruns due to poor planning and inaccurate estimates. That&apos;s why having a clear cost breakdown and a well-structured budget is essential.
               </p>
               
               <p className="text-xs sm:text-sm md:text-base text-[#121212]/80 leading-relaxed font-figtree">

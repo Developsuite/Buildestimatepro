@@ -30,7 +30,7 @@ export default function ResidentialEstimatingCTASection() {
                 Get Started with BuildEstimatePro Today
               </h2>
               <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 leading-relaxed mb-6 sm:mb-8 md:mb-10 font-figtree max-w-2xl mx-auto">
-                When it comes to residential estimating services, BuildEstimatePro stands out as a trusted partner. Whether you're a homeowner, architect, or builder, our team is ready to help you. We have a proven track record of helping clients successfully plan and budget their residential building construction projects. Contact us today to discuss your project requirements, and let us help you turn your vision into reality with our professional residential estimating services.
+                When it comes to residential estimating services, BuildEstimatePro stands out as a trusted partner. Whether you&apos;re a homeowner, architect, or builder, our team is ready to help you. We have a proven track record of helping clients successfully plan and budget their residential building construction projects. Contact us today to discuss your project requirements, and let us help you turn your vision into reality with our professional residential estimating services.
               </p>
               
               {/* CTA Buttons */}
