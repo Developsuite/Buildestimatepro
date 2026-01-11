@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getAllTradePages, createTradePage } from '@/lib/tradeData'
 
+export const runtime = 'edge'
+
 // GET - Get all trade pages
 export async function GET() {
   try {

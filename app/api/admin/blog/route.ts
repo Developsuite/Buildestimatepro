@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getAllBlogPosts, createBlogPost } from '@/lib/blogData'
 
+export const runtime = 'edge'
+
 export async function GET() {
   try {
     const posts = await getAllBlogPosts()

@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { generateToken } from '@/lib/auth'
 
+export const runtime = 'edge'
+
 // Simple authentication (replace with proper database check in production)
 const ADMIN_CREDENTIALS = {
   username: 'admin',

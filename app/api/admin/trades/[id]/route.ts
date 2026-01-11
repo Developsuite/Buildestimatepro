@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getTradePageById, updateTradePage, deleteTradePage } from '@/lib/tradeData'
 
+export const runtime = 'edge'
+
 // GET - Get single trade page
 export async function GET(
   request: NextRequest,
