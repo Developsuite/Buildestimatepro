@@ -1,6 +1,8 @@
 import AdminLayout from '@/components/admin/AdminLayout'
 import BlogPostEditor from '@/components/admin/BlogPostEditor'
 
+export const runtime = 'edge'
+
 // Required for static export - returns empty array since admin pages are dynamic
 export function generateStaticParams() {
   return []

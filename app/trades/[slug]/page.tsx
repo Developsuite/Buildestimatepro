@@ -8,6 +8,8 @@ import TradePageCTASection from '@/components/sections/trades/TradePageCTASectio
 import FooterSection from '@/components/sections/home/FooterSection'
 import { Metadata } from 'next'
 
+export const runtime = 'edge'
+
 // Required for static export - returns empty array for dynamic pages
 export function generateStaticParams() {
   return []
@@ -16,7 +18,7 @@ export function generateStaticParams() {
 // Generate metadata
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = params
-  
+
   try {
     const page = await getTradePageBySlug(slug)
 
