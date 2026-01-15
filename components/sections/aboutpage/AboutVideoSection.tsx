@@ -29,7 +29,7 @@ export default function AboutVideoSection() {
           className="absolute inset-0 w-full h-full object-cover"
           aria-label="BuildEstimatePro construction estimating services"
         >
-          <source src="/images/about/video (1).webm" type="video/webm" />
+          <source src="/images/about/video.webm" type="video/webm" />
           {/* Fallback for browsers that don't support webm */}
           Your browser does not support the video tag.
         </video>

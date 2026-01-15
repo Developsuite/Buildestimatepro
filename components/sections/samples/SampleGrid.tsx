@@ -111,63 +111,63 @@ const sampleDocuments: SampleDocument[] = [
     id: '15',
     title: 'Multi-Family',
     filename: 'MULTI-FAMILY-GC-Sample.pdf',
-    image: '/images/home/section 2/1.webp',
+    image: '/images/home/section2/1.webp',
     category: 'Residential'
   },
   {
     id: '16',
     title: 'Openings',
     filename: 'Openings-Sample.pdf',
-    image: '/images/home/section 2/2.webp',
+    image: '/images/home/section2/2.webp',
     category: 'Construction'
   },
   {
     id: '17',
     title: 'PID',
     filename: 'PID-Estimate-Sample.pdf',
-    image: '/images/home/section 2/3.webp',
+    image: '/images/home/section2/3.webp',
     category: 'Industrial'
   },
   {
     id: '18',
     title: 'Plumbing',
     filename: 'Plumbing-Estimate-Big-Sample.pdf',
-    image: '/images/home/section 2/4.webp',
+    image: '/images/home/section2/4.webp',
     category: 'Plumbing'
   },
   {
     id: '19',
     title: 'Power',
     filename: 'Power-Distribution-Estimate-Sample_watermark-1.pdf',
-    image: '/images/home/section 2/5.webp',
+    image: '/images/home/section2/5.webp',
     category: 'Electrical'
   },
   {
     id: '20',
     title: 'Remodel',
     filename: 'REMODEL-Sample.pdf',
-    image: '/images/home/section 2/6.webp',
+    image: '/images/home/section2/6.webp',
     category: 'Remodeling'
   },
   {
     id: '21',
     title: 'Residential',
     filename: 'RESIDENTIAL-Sample.pdf',
-    image: '/images/home/section 2/7.webp',
+    image: '/images/home/section2/7.webp',
     category: 'Residential'
   },
   {
     id: '22',
     title: 'Telecom',
     filename: 'TELECOM-ESTIMATE-SAMPLE.pdf',
-    image: '/images/home/section 2/8.webp',
+    image: '/images/home/section2/8.webp',
     category: 'Telecom'
   },
   {
     id: '23',
     title: 'Mitigation',
     filename: 'Water-and-Fire-Mitigation-Xactimate.pdf',
-    image: '/images/home/section 2/9.webp',
+    image: '/images/home/section2/9.webp',
     category: 'Restoration'
   }
 ]

@@ -4,9 +4,9 @@ import Image from 'next/image'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 const paymentMethods = [
-  { name: 'Visa', image: '/images/PRICING/PAYMENTS/Visa Inc._idDUM8TcN7_2.png' },
+  { name: 'Visa', image: '/images/PRICING/PAYMENTS/VisaInc._idDUM8TcN7_2.png' },
   { name: 'Mastercard', image: '/images/PRICING/PAYMENTS/Mastercard_Symbol_7.png' },
-  { name: 'American Express', image: '/images/PRICING/PAYMENTS/American Express_Logo_1.png' },
+  { name: 'American Express', image: '/images/PRICING/PAYMENTS/AmericanExpress_Logo_1.png' },
   { name: 'PayPal', image: '/images/PRICING/PAYMENTS/PayPal_Logo_Alternative_1.png' },
   { name: 'Stripe', image: '/images/PRICING/PAYMENTS/Stripe_Logo_7.png' },
   { name: 'Payoneer', image: '/images/PRICING/PAYMENTS/Payoneer_id3dQEWV2h_9.png' }
