@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabase } from '@/lib/supabase'
 
+export const runtime = 'edge'
+
 // GET single trade by ID
 export async function GET(
   request: NextRequest,

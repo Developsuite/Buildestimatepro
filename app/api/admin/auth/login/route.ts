@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyAdmin, generateToken } from '@/lib/auth'
 
+export const runtime = 'edge'
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
@@ -17,10 +19,10 @@ export async function POST(request: NextRequest) {
 
     if (isValid) {
       const token = generateToken()
-      return NextResponse.json({ 
-        success: true, 
+      return NextResponse.json({
+        success: true,
         token,
-        message: 'Login successful' 
+        message: 'Login successful'
       })
     } else {
       return NextResponse.json(

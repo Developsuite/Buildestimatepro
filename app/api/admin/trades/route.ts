@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabase } from '@/lib/supabase'
 
+export const runtime = 'edge'
+
 // GET all trades
 export async function GET() {
   try {
@@ -30,12 +32,12 @@ export async function POST(request: NextRequest) {
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     console.log('ENV Check - URL exists:', !!url, 'Key exists:', !!key)
     console.log('ENV URL:', url?.substring(0, 30) + '...')
-    
+
     const body = await request.json()
     console.log('Received body:', JSON.stringify(body, null, 2))
-    
+
     const supabase = getSupabase()
-    
+
     const now = new Date().toISOString()
     const tradeData = {
       slug: body.slug,
