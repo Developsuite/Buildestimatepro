@@ -1,7 +1,10 @@
-'use client'
-
 import AdminLayout from '@/components/admin/AdminLayout'
 import BlogPostEditor from '@/components/admin/BlogPostEditor'
+
+// Required for static export - returns empty array since admin pages are dynamic
+export function generateStaticParams() {
+  return []
+}
 
 interface EditBlogPostPageProps {
   params: {

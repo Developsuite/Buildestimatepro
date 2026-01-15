@@ -1,6 +1,14 @@
 import { notFound } from 'next/navigation'
 import FooterSection from '@/components/sections/home/FooterSection'
 
+// Required for static export
+export function generateStaticParams() {
+  return [
+    { slug: 'future-of-construction-estimation' },
+    { slug: 'common-estimation-mistakes' },
+  ]
+}
+
 // Mock blog posts data (in a real app, this would be from a database)
 const blogPosts = [
   {

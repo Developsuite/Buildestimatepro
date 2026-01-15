@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import AdminLayout from '@/components/admin/AdminLayout'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { getSupabase } from '@/lib/supabase'
 
 interface BlogPost {
   id: string
@@ -11,13 +11,12 @@ interface BlogPost {
   slug: string
   author: string
   published: boolean
-  publishedAt?: string
-  updatedAt: string
+  published_at?: string
+  updated_at: string
   category: string
 }
 
 export default function AdminBlogListPage() {
-  const router = useRouter()
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -29,12 +28,14 @@ export default function AdminBlogListPage() {
 
   const fetchPosts = async () => {
     try {
-      const response = await fetch('/api/admin/blog')
-      const data = await response.json()
+      const supabase = getSupabase()
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .order('updated_at', { ascending: false })
       
-      if (data.success) {
-        setPosts(data.posts)
-      }
+      if (error) throw error
+      setPosts(data || [])
     } catch (error) {
       console.error('Error fetching posts:', error)
     } finally {
@@ -46,13 +47,14 @@ export default function AdminBlogListPage() {
     if (!confirm('Are you sure you want to delete this blog post?')) return
 
     try {
-      const response = await fetch(`/api/admin/blog/${id}`, {
-        method: 'DELETE'
-      })
+      const supabase = getSupabase()
+      const { error } = await supabase
+        .from('blog_posts')
+        .delete()
+        .eq('id', id)
 
-      if (response.ok) {
-        setPosts(posts.filter(p => p.id !== id))
-      }
+      if (error) throw error
+      setPosts(posts.filter(p => p.id !== id))
     } catch (error) {
       console.error('Error deleting post:', error)
     }
@@ -91,7 +93,6 @@ export default function AdminBlogListPage() {
         {/* Filters */}
         <div className="bg-white rounded-xl p-6 border border-[#121212]/10">
           <div className="flex flex-col md:flex-row gap-4">
-            {/* Search */}
             <div className="flex-1">
               <input
                 type="text"
@@ -101,13 +102,11 @@ export default function AdminBlogListPage() {
                 className="w-full px-4 py-2 border border-[#121212]/20 rounded-lg focus:outline-none focus:border-[#E8481C] focus:ring-2 focus:ring-[#E8481C]/20 font-figtree"
               />
             </div>
-
-            {/* Status Filter */}
             <div className="flex gap-2">
               {['all', 'published', 'draft'].map((status) => (
                 <button
                   key={status}
-                  onClick={() => setFilterStatus(status as any)}
+                  onClick={() => setFilterStatus(status as 'all' | 'published' | 'draft')}
                   className={`px-4 py-2 rounded-lg font-medium font-figtree transition-all ${
                     filterStatus === status
                       ? 'bg-[#E8481C] text-white'
@@ -176,7 +175,7 @@ export default function AdminBlogListPage() {
                         </span>
                       </td>
                       <td className="px-6 py-4 text-sm text-[#121212]/70 font-figtree">
-                        {new Date(post.updatedAt).toLocaleDateString()}
+                        {new Date(post.updated_at).toLocaleDateString()}
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center justify-end gap-2">

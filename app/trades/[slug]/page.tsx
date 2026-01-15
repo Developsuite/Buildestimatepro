@@ -8,8 +8,10 @@ import TradePageCTASection from '@/components/sections/trades/TradePageCTASectio
 import FooterSection from '@/components/sections/home/FooterSection'
 import { Metadata } from 'next'
 
-// Force dynamic rendering for Cloudflare Pages compatibility
-export const dynamic = 'force-dynamic'
+// Required for static export - returns empty array for dynamic pages
+export function generateStaticParams() {
+  return []
+}
 
 // Generate metadata
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {

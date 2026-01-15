@@ -1,13 +1,14 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
-
 // Create a lazy-initialized Supabase client
 let supabaseInstance: SupabaseClient | null = null
 
 export const getSupabase = (): SupabaseClient => {
   if (!supabaseInstance) {
+    // Read environment variables inside the function to ensure they're available
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    
     if (!supabaseUrl || !supabaseAnonKey) {
       throw new Error('Supabase URL and Anon Key are required. Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables.')
     }
@@ -16,10 +17,11 @@ export const getSupabase = (): SupabaseClient => {
   return supabaseInstance
 }
 
-// For backward compatibility - will throw if env vars not set
-export const supabase = supabaseUrl && supabaseAnonKey 
-  ? createClient(supabaseUrl, supabaseAnonKey)
-  : null as unknown as SupabaseClient
+// For backward compatibility - creates client on demand
+export const supabase = {
+  from: (table: string) => getSupabase().from(table),
+  auth: { getSession: () => getSupabase().auth.getSession() }
+} as unknown as SupabaseClient
 
 // Types for database tables
 export interface TradePageDB {

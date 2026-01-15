@@ -1,30 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { generateToken } from '@/lib/auth'
-
-export const runtime = 'edge'
-
-// Simple authentication (replace with proper database check in production)
-const ADMIN_CREDENTIALS = {
-  username: 'admin',
-  password: 'admin123' // In production, use hashed passwords
-}
+import { verifyAdmin, generateToken } from '@/lib/auth'
 
 export async function POST(request: NextRequest) {
   try {
-    const { username, password } = await request.json()
+    const body = await request.json()
+    const { username, password } = body
 
-    // Verify credentials
-    if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+    if (!username || !password) {
+      return NextResponse.json(
+        { error: 'Username and password are required' },
+        { status: 400 }
+      )
+    }
+
+    const isValid = verifyAdmin(username, password)
+
+    if (isValid) {
       const token = generateToken()
-      
-      return NextResponse.json({
-        success: true,
+      return NextResponse.json({ 
+        success: true, 
         token,
-        user: { username }
+        message: 'Login successful' 
       })
     } else {
       return NextResponse.json(
-        { error: 'Invalid username or password' },
+        { error: 'Invalid credentials' },
         { status: 401 }
       )
     }
@@ -35,6 +35,3 @@ export async function POST(request: NextRequest) {
     )
   }
 }
-
-
-

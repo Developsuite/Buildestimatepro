@@ -106,8 +106,11 @@ export default function TradePageEditor({ pageId }: TradePageEditorProps) {
     }
   }
 
+  const [error, setError] = useState('')
+
   const handleSave = async (publish: boolean = false) => {
     setSaving(true)
+    setError('')
     try {
       const dataToSave = {
         ...formData,
@@ -125,13 +128,19 @@ export default function TradePageEditor({ pageId }: TradePageEditorProps) {
         body: JSON.stringify(dataToSave),
       })
 
-      if (response.ok) {
+      const result = await response.json()
+
+      if (response.ok && result.success) {
         // Trigger custom event to notify navbar to refresh
         window.dispatchEvent(new CustomEvent('tradesUpdated'))
         router.push('/admin/trades')
+      } else {
+        setError(result.error || 'Failed to save page. Please try again.')
+        console.error('Save error:', result)
       }
     } catch (error) {
       console.error('Error saving page:', error)
+      setError('Network error. Please check your connection and try again.')
     } finally {
       setSaving(false)
     }
@@ -205,6 +214,13 @@ export default function TradePageEditor({ pageId }: TradePageEditorProps) {
 
   return (
     <div className="space-y-6">
+      {/* Error Message */}
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 font-figtree">
+          <strong>Error:</strong> {error}
+        </div>
+      )}
+
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>

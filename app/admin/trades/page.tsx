@@ -3,18 +3,17 @@
 import { useEffect, useState } from 'react'
 import AdminLayout from '@/components/admin/AdminLayout'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { getSupabase } from '@/lib/supabase'
 
 interface TradePage {
   id: string
   slug: string
   title: string
   published: boolean
-  updatedAt: string
+  updated_at: string
 }
 
 export default function AdminTradesListPage() {
-  const router = useRouter()
   const [pages, setPages] = useState<TradePage[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -26,12 +25,14 @@ export default function AdminTradesListPage() {
 
   const fetchPages = async () => {
     try {
-      const response = await fetch('/api/admin/trades')
-      const data = await response.json()
+      const supabase = getSupabase()
+      const { data, error } = await supabase
+        .from('trades')
+        .select('*')
+        .order('updated_at', { ascending: false })
       
-      if (data.success) {
-        setPages(data.pages)
-      }
+      if (error) throw error
+      setPages(data || [])
     } catch (error) {
       console.error('Error fetching pages:', error)
     } finally {
@@ -43,16 +44,15 @@ export default function AdminTradesListPage() {
     if (!confirm('Are you sure you want to delete this page?')) return
 
     try {
-      const response = await fetch(`/api/admin/trades/${id}`, {
-        method: 'DELETE'
-      })
+      const supabase = getSupabase()
+      const { error } = await supabase
+        .from('trades')
+        .delete()
+        .eq('id', id)
 
-      if (response.ok) {
-        setPages(pages.filter(p => p.id !== id))
-        
-        // Trigger custom event to notify navbar to refresh
-        window.dispatchEvent(new CustomEvent('tradesUpdated'))
-      }
+      if (error) throw error
+      setPages(pages.filter(p => p.id !== id))
+      window.dispatchEvent(new CustomEvent('tradesUpdated'))
     } catch (error) {
       console.error('Error deleting page:', error)
     }
@@ -71,7 +71,6 @@ export default function AdminTradesListPage() {
   return (
     <AdminLayout>
       <div className="space-y-6">
-        {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-[#121212] font-figtree">Trade Pages</h1>
@@ -88,10 +87,8 @@ export default function AdminTradesListPage() {
           </Link>
         </div>
 
-        {/* Filters */}
         <div className="bg-white rounded-xl p-6 border border-[#121212]/10">
           <div className="flex flex-col md:flex-row gap-4">
-            {/* Search */}
             <div className="flex-1">
               <input
                 type="text"
@@ -101,13 +98,11 @@ export default function AdminTradesListPage() {
                 className="w-full px-4 py-2 border border-[#121212]/20 rounded-lg focus:outline-none focus:border-[#E8481C] focus:ring-2 focus:ring-[#E8481C]/20 font-figtree"
               />
             </div>
-
-            {/* Status Filter */}
             <div className="flex gap-2">
               {['all', 'published', 'draft'].map((status) => (
                 <button
                   key={status}
-                  onClick={() => setFilterStatus(status as any)}
+                  onClick={() => setFilterStatus(status as 'all' | 'published' | 'draft')}
                   className={`px-4 py-2 rounded-lg font-medium font-figtree transition-all ${
                     filterStatus === status
                       ? 'bg-[#E8481C] text-white'
@@ -121,7 +116,6 @@ export default function AdminTradesListPage() {
           </div>
         </div>
 
-        {/* Pages List */}
         <div className="bg-white rounded-xl border border-[#121212]/10 overflow-hidden">
           {loading ? (
             <div className="p-12 text-center">
@@ -169,7 +163,7 @@ export default function AdminTradesListPage() {
                         </span>
                       </td>
                       <td className="px-6 py-4 text-sm text-[#121212]/70 font-figtree">
-                        {new Date(page.updatedAt).toLocaleDateString()}
+                        {new Date(page.updated_at).toLocaleDateString()}
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center justify-end gap-2">
@@ -204,6 +198,3 @@ export default function AdminTradesListPage() {
     </AdminLayout>
   )
 }
-
-
-
