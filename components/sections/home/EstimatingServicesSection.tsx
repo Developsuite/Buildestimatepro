@@ -17,70 +17,70 @@ const services: Service[] = [
     id: 1,
     title: 'Concrete Estimating',
     icon: '/icons/homepage/1.webp',
-    image: '/images/home/section 2/1.webp',
+    image: '/images/home/section/1.webp',
     content: 'Our concrete estimating solutions help contractors evaluate project costs and material quantities with confidence. Whether the project involves foundations, slabs, parking areas, or driveways, our specialists deliver detailed and dependable takeoffs. Using advanced tools such as Bluebeam, Planswift, and Accubid, we ensure exceptional accuracy and help you prepare highly competitive bids. Working with us allows you to reduce estimating expenses and improve your chances of winning more projects while keeping your construction budget on track.'
   },
   {
     id: 2,
     title: 'Electrical Estimating',
     icon: '/icons/homepage/2.webp',
-    image: '/images/home/section 2/2.webp',
+    image: '/images/home/section/2.webp',
     content: 'We provide electrical estimating services for everything from low voltage systems to complex instrumentation and control work. Our team includes skilled electrical estimators, engineers, and industrial electronics professionals who prepare carefully calculated material and labor breakdowns. We also support budgeting, design assistance, and value engineering. Leveraging top software solutions including ConEst, Planswift, Accubid, and Bluebeam, we deliver precise estimates that strengthen your bidding performance.'
   },
   {
     id: 3,
     title: 'Interior & Exterior Finishes',
     icon: '/icons/homepage/3.webp',
-    image: '/images/home/section 2/3.webp',
+    image: '/images/home/section/3.webp',
     content: 'At Construct Estimates, we know that accurate estimating for interior and exterior finishes is essential for successful project planning. From painting and stucco to plaster and specialty coatings, we offer detailed takeoffs that help contractors price their work correctly and secure more jobs. Our focus on accuracy prevents overspending and unnecessary material costs. Outsourcing your finish estimating needs to us allows you to avoid hiring additional staff while receiving professional, reliable results.'
   },
   {
     id: 4,
     title: 'Masonry Estimating',
     icon: '/icons/homepage/4.webp',
-    image: '/images/home/section 2/4.webp',
+    image: '/images/home/section/4.webp',
     content: 'Our masonry estimating services are designed to support contractors with precise measurements and cost calculations for brickwork, blockwork, stonework, and related finishes. We deliver highly accurate takeoffs that help prevent cost overruns and keep project budgets stable. By partnering with us, you gain access to experienced estimators who provide dependable results and ensure your bids remain competitive without the overhead of in house estimating teams.'
   },
   {
     id: 5,
     title: 'MEP Estimating',
     icon: '/icons/homepage/5.webp',
-    image: '/images/home/section 2/5.webp',
+    image: '/images/home/section/5.webp',
     content: 'Our dedicated MEP estimating department specializes in mechanical, electrical, and plumbing cost evaluations. We handle HVAC systems, ductwork, piping, plumbing fixtures, and more with meticulous attention to detail. Using industry recognized tools such as Bluebeam, PlanSwift, FastWRAP, FastDuct, FastPIPE, and Trimble, our certified MEP estimators create comprehensive and precise estimates that meet industry standards. Rely on our expertise to navigate the complexities of MEP projects with accuracy and efficiency.'
   },
   {
     id: 6,
     title: 'Metal Estimating',
     icon: '/icons/homepage/6.webp',
-    image: '/images/home/section 2/6.webp',
+    image: '/images/home/section/6.webp',
     content: 'Our metal estimating team provides complete takeoffs for structural steel, rebar, and miscellaneous metal components. From railings and joists to trusses, decking, and steel framing, we quantify materials with precision to help contractors control costs and reduce waste. Our engineers review each detail to ensure accuracy and support environmentally responsible material usage. Choose our services for timely and dependable metal estimates that improve project planning and execution.'
   },
   {
     id: 7,
     title: 'Openings Estimating',
     icon: '/icons/homepage/7.webp',
-    image: '/images/home/section 2/7.webp',
+    image: '/images/home/section/7.webp',
     content: 'We deliver complete estimates for doors, windows, and frame systems across all material types including aluminum, metal, bronze, fiberglass, and vinyl. Our team calculates both material and installation costs, offering clear and well structured proposals for commercial and residential projects. With extensive experience in door and frame installations, we ensure precise takeoffs that help contractors bid confidently and minimize unexpected expenses.'
   },
   {
     id: 8,
     title: 'Sitework Estimating',
     icon: '/icons/homepage/8.webp',
-    image: '/images/home/section 2/8.webp',
+    image: '/images/home/section/8.webp',
     content: 'Our sitework estimating services cover earthwork, grading, cut and fill calculations, and site utilities. We provide detailed 3D visuals, accurate earthwork volumes, and comprehensive takeoffs for landscaping, foundations, pavements, asphalt, and driveways. By combining expert knowledge with powerful tools such as Bluebeam, Planswift, and Accubid, we deliver reliable and complete sitework estimates that support efficient planning and cost control.'
   },
   {
     id: 9,
     title: 'Thermal/Moisture Protection Estimating',
     icon: '/icons/homepage/9.webp',
-    image: '/images/home/section 2/9.webp',
+    image: '/images/home/section2/9.webp',
     content: 'We offer specialized estimating services for roofing, insulation, waterproofing, siding, caulking, sealants, and fire stopping systems. Our estimates assist with procurement, labor planning, material ordering, and bid preparation. Using advanced estimating software and the expertise of trained construction estimators, we provide cost evaluations tailored to the specific requirements of your trade. Expect accurate, detail oriented results that help avoid costly mistakes.'
   },
   {
     id: 10,
     title: 'Lumber Takeoff',
     icon: '/icons/homepage/10.webp',
-    image: '/images/home/section 2/10.webp',
+    image: '/images/home/section/10.webp',
     content: 'Our lumber takeoff services support builders, framers, millwork contractors, and commercial construction teams by providing precise material quantities for rough and finished carpentry. We cover everything from trusses and framing lumber to cabinetry, countertops, paneling, and laminates. By outsourcing your lumber takeoff work to us, you save on training, staffing, and overhead while gaining access to accurate and timely takeoffs that strengthen your bids and improve project outcomes.'
   }
 ]

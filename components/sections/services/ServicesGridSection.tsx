@@ -17,35 +17,35 @@ const services: Service[] = [
   {
     title: 'Cost Estimating Services',
     description: 'Professional construction cost estimating services that deliver accurate, data-driven estimates for your building projects. Our expert estimators analyze project specifications, blueprints, and materials to provide comprehensive cost breakdowns that help you bid competitively and maintain profitability.',
-    image: '/images/services/servicespage/1 (1).webp',
+    image: '/images/services/servicespage/1.webp',
     href: '/services/cost-estimating',
     features: ['Accurate cost analysis', 'Material & labor breakdown', 'Budget planning support', 'Fast turnaround times']
   },
   {
     title: 'Material Takeoff Services',
     description: 'Precise material takeoff services that ensure you order the right quantities at the right prices. Our detailed takeoffs cover all materials including concrete, steel, lumber, electrical, plumbing, and more, helping you avoid costly overruns and shortages.',
-    image: '/images/services/servicespage/2 (1).webp',
+    image: '/images/services/servicespage/2.webp',
     href: '/services/material-takeoff',
     features: ['Detailed quantity takeoffs', 'Material cost analysis', 'Waste calculation', 'Procurement support']
   },
   {
     title: 'Residential Estimating Services',
     description: 'Specialized residential construction estimating for new builds, renovations, additions, and remodeling projects. We provide accurate estimates that help homeowners and contractors plan budgets, secure financing, and execute projects successfully.',
-    image: '/images/services/servicespage/3 (1).webp',
+    image: '/images/services/servicespage/3.webp',
     href: '/services/residential',
     features: ['New construction estimates', 'Renovation planning', 'Home additions', 'Budget-friendly solutions']
   },
   {
     title: 'Commercial Estimating Services',
     description: 'Comprehensive commercial construction estimating for office buildings, retail spaces, restaurants, hotels, and more. Our commercial estimates help general contractors and developers make informed decisions and submit competitive bids.',
-    image: '/images/services/servicespage/4 (1).webp',
+    image: '/images/services/servicespage/4.webp',
     href: '/services/commercial',
     features: ['Commercial building estimates', 'Retail & office spaces', 'Multi-unit developments', 'Competitive bidding support']
   },
   {
     title: 'Industrial Estimating Services',
     description: 'Expert industrial construction estimating for warehouses, manufacturing facilities, distribution centers, and large-scale industrial projects. We understand the complexities of industrial construction and deliver accurate estimates for complex mechanical and structural systems.',
-    image: '/images/services/servicespage/5 (1).webp',
+    image: '/images/services/servicespage/5.webp',
     href: '/services/industrial',
     features: ['Industrial facility estimates', 'Complex systems analysis', 'Large-scale project expertise', 'Mechanical & structural focus']
   },
