@@ -38,7 +38,7 @@ export default function HeroStats() {
         </div>
 
         {/* More Testimonials Link */}
-        <Link href="/testimonials" className="text-sm text-white hover:text-[#E8481C] transition-colors flex items-center gap-2 w-fit font-figtree">
+        <Link href="/about" className="text-sm text-white hover:text-[#E8481C] transition-colors flex items-center gap-2 w-fit font-figtree">
           More testimonials
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

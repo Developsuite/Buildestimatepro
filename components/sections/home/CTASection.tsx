@@ -29,7 +29,7 @@ export default function CTASection() {
                   Ready to Take the Next Step?
                 </h2>
                 <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/80 leading-relaxed font-figtree max-w-2xl mx-auto lg:mx-0">
-                  Contact us today to get started on your construction projects and experience the difference of working with Construct Estimates.
+                  Contact us today to get started on your construction projects and experience the difference of working with Buildestimatepro.
                 </p>
               </div>
 

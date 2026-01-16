@@ -39,7 +39,7 @@ export default function MaterialTakeoffHeroSection() {
         <div className="max-w-7xl 2xl:max-w-[90rem] w-full">
           {/* Breadcrumb */}
           <nav className="mb-2 sm:mb-3 md:mb-4">
-            <ol className="flex items-center gap-2 text-xs sm:text-sm text-white/70 font-figtree">
+            <ol className="flex items-center justify-center md:justify-start gap-2 text-xs sm:text-sm text-white/70 font-figtree">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li className="text-[#E8481C]">»</li>
               <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
@@ -49,19 +49,19 @@ export default function MaterialTakeoffHeroSection() {
           </nav>
 
           {/* Hero Content */}
-          <div className="max-w-4xl">
+          <div className="max-w-4xl text-center md:text-left mx-auto md:mx-0">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-figtree leading-tight">
               Quantity Takeoff Services
             </h1>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 mb-4 sm:mb-5 md:mb-6 font-figtree leading-relaxed max-w-3xl">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 mb-4 sm:mb-5 md:mb-6 font-figtree leading-relaxed max-w-3xl mx-auto md:mx-0">
               Worried about the exact amount of material and items needed to complete your project? Get our comprehensive quantity takeoff services that include every detail about required materials and items.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center md:items-start gap-2 sm:gap-3 justify-center md:justify-start w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center gap-2 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-[#E8481C] text-white font-figtree text-xs sm:text-sm md:text-base font-semibold rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                className="group relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2 md:px-8 md:py-3.5 bg-[#E8481C] text-white font-figtree text-xs md:text-base font-semibold rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
               >
                 <span className="absolute inset-0 bg-white transform scale-x-0 origin-left transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-x-100"></span>
                 <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-[#121212]">
@@ -73,7 +73,7 @@ export default function MaterialTakeoffHeroSection() {
               </Link>
               <Link
                 href="tel:7372733314"
-                className="group inline-flex items-center justify-center gap-2 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 font-figtree text-xs sm:text-sm md:text-base font-semibold rounded-lg hover:bg-white/20 transition-all duration-300"
+                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2 md:px-8 md:py-3.5 bg-white text-[#E8481C] border border-white hover:border-[#E8481C] font-figtree text-xs md:text-base font-semibold rounded-lg transition-all duration-300"
               >
                 Call Us Now
                 <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

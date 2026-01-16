@@ -68,6 +68,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesHovered, setIsServicesHovered] = useState(false)
   const [isTradesHovered, setIsTradesHovered] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobileTradesOpen, setMobileTradesOpen] = useState(false)
   const [trades, setTrades] = useState<Trade[]>([])
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const tradesHoverTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -147,7 +149,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="w-full bg-[#F5F1E6]">
+    <nav className="w-full bg-[#F5F1E6] relative">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-[50px]">
         <div className="flex items-center justify-between h-[94px] py-[30px]">
           {/* Logo */}
@@ -330,104 +332,164 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Animated Hamburger to X */}
           <button
-            className="lg:hidden flex items-center justify-center w-10 h-10 text-[#121212]"
+            className="lg:hidden flex items-center justify-center w-10 h-10 relative z-50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
+            <div className="w-6 h-5 relative flex flex-col justify-between">
+              {/* Top line */}
+              <span 
+                className={`block h-0.5 w-6 bg-[#121212] rounded-full transform transition-all duration-300 ease-in-out origin-center ${
+                  isMenuOpen ? 'rotate-45 translate-y-[9px]' : ''
+                }`}
+              />
+              {/* Middle line */}
+              <span 
+                className={`block h-0.5 w-6 bg-[#121212] rounded-full transition-all duration-300 ease-in-out ${
+                  isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+                }`}
+              />
+              {/* Bottom line */}
+              <span 
+                className={`block h-0.5 w-6 bg-[#121212] rounded-full transform transition-all duration-300 ease-in-out origin-center ${
+                  isMenuOpen ? '-rotate-45 -translate-y-[9px]' : ''
+                }`}
+              />
+            </div>
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden pb-6 border-t border-gray-200 mt-2 pt-4">
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <div key={link.name}>
-                  <Link
-                    href={link.href}
-                    onClick={() => !link.hasDropdown && setIsMenuOpen(false)}
-                    className={`text-base font-normal py-2 block ${
-                      link.active
-                        ? 'text-[#E8481C]'
-                        : 'text-[#121212] hover:text-[#E8481C]'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                  
-                  {/* Mobile Trades Submenu */}
-                  {link.isTrades && trades.length > 0 && (
-                    <div className="ml-4 mt-2 space-y-2">
-                      {trades.map((trade) => (
-                        <Link
-                          key={trade.id}
-                          href={`/trades/${trade.slug}`}
-                          onClick={() => setIsMenuOpen(false)}
-                          className="block text-sm text-gray-600 hover:text-[#E8481C] py-1"
+        {/* Mobile Menu - Positioned below navbar */}
+        <div 
+          className={`lg:hidden absolute left-0 right-0 top-full z-40 transition-all duration-300 ease-out ${
+            isMenuOpen 
+              ? 'opacity-100 visible' 
+              : 'opacity-0 invisible pointer-events-none'
+          }`}
+        >
+          {/* Menu Panel */}
+          <div className={`bg-[#F5F1E6] shadow-xl border-t border-[#E8481C]/10 transition-all duration-300 ${
+            isMenuOpen ? 'translate-y-0' : '-translate-y-2'
+          }`}>
+            {/* Menu Items */}
+            <div className="px-4 py-4 max-h-[70vh] overflow-y-auto">
+              <nav className="space-y-0">
+                {navLinks.map((link) => (
+                  <div key={link.name}>
+                    {link.hasDropdown ? (
+                      <>
+                        <button
+                          onClick={() => {
+                            if (link.isServices) setMobileServicesOpen(!mobileServicesOpen)
+                            if (link.isTrades) setMobileTradesOpen(!mobileTradesOpen)
+                          }}
+                          className="w-full flex items-center justify-between py-3 text-[#121212] hover:text-[#E8481C] transition-colors border-b border-[#121212]/10"
                         >
-                          • {trade.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+                          <span className="text-sm font-medium">{link.name}</span>
+                          <svg
+                            className={`w-4 h-4 transition-transform duration-300 ${
+                              (link.isServices && mobileServicesOpen) || (link.isTrades && mobileTradesOpen)
+                                ? 'rotate-180 text-[#E8481C]'
+                                : 'text-[#121212]/50'
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        
+                        {/* Services Submenu */}
+                        <div 
+                          className={`overflow-hidden transition-all duration-300 ease-out ${
+                            link.isServices && mobileServicesOpen 
+                              ? 'max-h-[400px] opacity-100' 
+                              : 'max-h-0 opacity-0'
+                          }`}
+                        >
+                          <div className="pl-4 py-2 space-y-0 border-l-2 border-[#E8481C]/30 ml-2 bg-white/30">
+                            {services.map((service, idx) => (
+                              <Link
+                                key={idx}
+                                href={service.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className={`block py-2 text-xs transition-colors ${
+                                  service.isHighlighted 
+                                    ? 'text-[#E8481C] font-medium' 
+                                    : 'text-[#121212]/70 hover:text-[#E8481C]'
+                                }`}
+                              >
+                                {service.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        {/* Trades Submenu */}
+                        <div 
+                          className={`overflow-hidden transition-all duration-300 ease-out ${
+                            link.isTrades && mobileTradesOpen && trades.length > 0
+                              ? 'max-h-[400px] opacity-100' 
+                              : 'max-h-0 opacity-0'
+                          }`}
+                        >
+                          <div className="pl-4 py-2 space-y-0 border-l-2 border-[#E8481C]/30 ml-2 bg-white/30">
+                            {trades.map((trade) => (
+                              <Link
+                                key={trade.id}
+                                href={`/trades/${trade.slug}`}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="block py-2 text-xs text-[#121212]/70 hover:text-[#E8481C] transition-colors"
+                              >
+                                {trade.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={`block py-3 text-sm font-medium transition-colors border-b border-[#121212]/10 ${
+                          link.active ? 'text-[#E8481C]' : 'text-[#121212] hover:text-[#E8481C]'
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </nav>
               
-              {/* Mobile Actions */}
-              <div className="flex flex-col gap-3 pt-4">
+              {/* CTA Button */}
+              <div className="mt-4 pt-2">
                 <Link
                   href="/contact"
                   onClick={() => setIsMenuOpen(false)}
-                  className="group relative w-full h-[33px] flex items-center justify-center bg-white text-[#121212] text-sm font-normal overflow-hidden transition-all duration-300"
+                  className="block w-full py-3 px-4 text-center text-white text-sm font-medium rounded-lg bg-[#E8481C] hover:bg-[#d63d14] transition-all duration-300 shadow-md"
                 >
-                  <span className="absolute inset-0 bg-[#E8481C] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                  <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                    Get Estimate
+                  <span className="flex items-center justify-center gap-2">
+                    Get Free Estimate
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </span>
-                </Link>
-                
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="group relative w-full h-[33px] flex items-center justify-center bg-[#121212] text-white text-sm font-normal overflow-hidden transition-all duration-300"
-                >
-                  <span className="absolute inset-0 bg-[#E8481C] transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                  <span className="relative z-10 transition-colors duration-300">Contact Us</span>
                 </Link>
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* Backdrop for mobile menu */}
+        {isMenuOpen && (
+          <div 
+            className="lg:hidden fixed inset-0 top-full bg-black/20 z-30"
+            onClick={() => setIsMenuOpen(false)}
+          />
         )}
       </div>
     </nav>

@@ -45,20 +45,20 @@ export default function ContactInfoSection() {
             <div className="relative z-10 space-y-8 sm:space-y-10 md:space-y-12">
               {/* Title and Description */}
               <div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree text-center md:text-left">
                   Contact Sales
                 </h2>
-                <p className="text-sm sm:text-base text-[#121212] leading-relaxed font-figtree">
+                <p className="text-sm sm:text-base text-[#121212] leading-relaxed font-figtree text-center md:text-left">
                   Whether you&apos;re looking for detailed information, need a comprehensive questions about how we can meet your unique requirements.
                 </p>
               </div>
 
               {/* Our Location */}
               <div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree">
+                <h3 className="text-lg sm:text-xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree text-center md:text-left">
                   Our Location
                 </h3>
-                <p className="text-sm sm:text-base text-[#121212] font-figtree">
+                <p className="text-sm sm:text-base text-[#121212] font-figtree text-center md:text-left">
                   BuildEstimatePro<br />
                   1234 Madison Avenue, Suite 567<br />
                   New York, NY 10001, USA
@@ -66,7 +66,7 @@ export default function ContactInfoSection() {
               </div>
 
               {/* Message with us */}
-              <div>
+              <div className="text-center md:text-left">
                 <h3 className="text-lg sm:text-xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree">
                   Message with us
                 </h3>
@@ -82,7 +82,7 @@ export default function ContactInfoSection() {
               </div>
 
               {/* Call us now */}
-              <div>
+              <div className="text-center md:text-left">
                 <h3 className="text-lg sm:text-xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree">
                   Call us now
                 </h3>

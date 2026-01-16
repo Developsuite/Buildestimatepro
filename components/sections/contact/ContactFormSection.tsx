@@ -32,7 +32,7 @@ export default function ContactFormSection() {
     <section ref={ref} className={`relative w-full bg-[#F5F1E6] py-12 sm:py-16 md:py-20 lg:py-24 scroll-fade-in-up ${isVisible ? 'visible' : ''}`}>
       <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto pl-4 sm:pl-6 md:pl-6 lg:pl-8 xl:pl-10 2xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         {/* Title Section */}
-        <div className="mb-8 sm:mb-10 md:mb-12">
+        <div className="mb-8 sm:mb-10 md:mb-12 text-center md:text-left">
           <p className="text-xs sm:text-sm text-[#121212]/80 mb-2 sm:mb-3 font-figtree">
             Get In Touch
           </p>
@@ -45,7 +45,7 @@ export default function ContactFormSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
           {/* Form Section */}
           <div>
-            <p className="text-sm sm:text-base text-[#121212] leading-relaxed font-figtree mb-8 sm:mb-10 md:mb-12">
+            <p className="text-sm sm:text-base text-[#121212] leading-relaxed font-figtree mb-8 sm:mb-10 md:mb-12 text-center md:text-left">
               We&apos;d love to hear from you! Whether you have a new project in mind, need expert consultation, or just want to learn more about our work, our team is ready to assist. Fill the below form to resolve any queries or to ask for estimation.
             </p>
 

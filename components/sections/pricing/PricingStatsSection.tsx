@@ -48,7 +48,7 @@ export default function PricingStatsSection() {
         <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto pl-4 sm:pl-6 md:pl-6 lg:pl-8 xl:pl-10 2xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
             {/* Left Side - Content */}
-            <div className="text-white">
+            <div className="text-white text-center lg:text-left">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 font-figtree leading-tight">
                 Why Choose BuildEstimatePro
               </h2>
@@ -63,7 +63,7 @@ export default function PricingStatsSection() {
             </div>
 
             {/* Right Side - Stats Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6">
               {stats.map((stat, index) => (
                 <div
                   key={stat.id}

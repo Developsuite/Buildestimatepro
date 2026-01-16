@@ -73,7 +73,7 @@ const services: Service[] = [
     id: 9,
     title: 'Thermal/Moisture Protection Estimating',
     icon: '/icons/homepage/9.webp',
-    image: '/images/home/section2/9.webp',
+    image: '/images/home/section/9.webp',
     content: 'We offer specialized estimating services for roofing, insulation, waterproofing, siding, caulking, sealants, and fire stopping systems. Our estimates assist with procurement, labor planning, material ordering, and bid preparation. Using advanced estimating software and the expertise of trained construction estimators, we provide cost evaluations tailored to the specific requirements of your trade. Expect accurate, detail oriented results that help avoid costly mistakes.'
   },
   {

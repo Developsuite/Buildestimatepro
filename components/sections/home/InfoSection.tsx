@@ -37,7 +37,7 @@ export default function InfoSection() {
               </p>
               
               <p className="text-xs sm:text-sm md:text-base text-[#121212]/80 leading-relaxed font-figtree">
-                At Cost Bidding, we provide precise, error-free construction estimates for projects of all sizes. Our team of 100+ expert estimators helps reduce overheads, identify risks, offer cost-saving alternatives, and ensure compliance with local building codes.
+                At Buildestimatepro, we provide precise, error-free construction estimates for projects of all sizes. Our team of 100+ expert estimators helps reduce overheads, identify risks, offer cost-saving alternatives, and ensure compliance with local building codes.
               </p>
               
               <p className="text-xs sm:text-sm md:text-base text-[#121212]/80 leading-relaxed font-figtree">

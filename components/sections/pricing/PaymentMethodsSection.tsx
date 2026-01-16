@@ -19,11 +19,11 @@ export default function PaymentMethodsSection() {
     <section ref={ref} className={`relative w-full bg-[#F5F1E6] pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-12 sm:pb-16 md:pb-20 lg:pb-24 scroll-fade-in-up ${isVisible ? 'visible' : ''}`}>
       <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto pl-4 sm:pl-6 md:pl-6 lg:pl-8 xl:pl-10 2xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         {/* Section Header */}
-        <div className="text-left mb-8 sm:mb-10 md:mb-12">
+        <div className="text-center md:text-left mb-8 sm:mb-10 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-5 md:mb-6 font-figtree">
             Our Payment Methods
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree max-w-3xl">
+          <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree max-w-3xl mx-auto md:mx-0">
             We prioritize secure and convenient online payment options for your peace of mind. Accept credit cards, debit cards, and PayPal. After reviewing your project, we&apos;ll send a detailed quote and invoice. Once payment is confirmed, your comprehensive budget estimate will be delivered within 24-48 hours.
           </p>
         </div>

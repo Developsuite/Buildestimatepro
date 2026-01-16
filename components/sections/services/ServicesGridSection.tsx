@@ -133,11 +133,11 @@ export default function ServicesGridSection() {
 
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         {/* Section Header */}
-        <div className="text-left mb-10 sm:mb-12 md:mb-16">
+        <div className="text-center md:text-left mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree">
             Our Comprehensive Services
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 max-w-3xl mx-0 font-figtree leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 max-w-3xl mx-auto md:mx-0 font-figtree leading-relaxed">
             Professional construction estimating and takeoff services tailored to meet the unique needs of contractors, builders, and construction professionals across all project types and scales.
           </p>
         </div>

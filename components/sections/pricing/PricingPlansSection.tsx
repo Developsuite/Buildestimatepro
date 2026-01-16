@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
@@ -69,22 +70,145 @@ const plans = [
 
 export default function PricingPlansSection() {
   const [ref, isVisible] = useScrollAnimation()
+  const [selectedPlanId, setSelectedPlanId] = useState(2) // Default to Customized Plan (most popular)
+
+  const selectedPlan = plans.find(plan => plan.id === selectedPlanId) || plans[1]
 
   return (
     <section ref={ref} className={`relative w-full bg-[#F5F1E6] py-12 sm:py-16 md:py-20 lg:py-24 scroll-fade-in-up ${isVisible ? 'visible' : ''}`}>
       <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto pl-4 sm:pl-6 md:pl-6 lg:pl-8 xl:pl-10 2xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         {/* Section Header */}
-        <div className="text-left mb-12 sm:mb-14 md:mb-16 lg:mb-20">
+        <div className="text-center md:text-left mb-12 sm:mb-14 md:mb-16 lg:mb-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-5 md:mb-6 font-figtree">
             Client-Focused Pricing Solutions
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree max-w-3xl">
+          <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree max-w-3xl mx-auto md:mx-0">
             We understand the importance of cost-effective solutions. That&apos;s why BuildEstimatePro offers flexible pricing plans designed to fit your project requirements and budget. Browse our packages below or request a custom solution tailored specifically to your needs.
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Mobile Tab Buttons - Only visible on mobile */}
+        <div className="md:hidden mb-6">
+          <div className="flex gap-2 overflow-x-auto pb-2">
+            {plans.map((plan) => (
+              <button
+                key={plan.id}
+                onClick={() => setSelectedPlanId(plan.id)}
+                className={`flex-1 min-w-[100px] px-3 py-2.5 rounded-lg font-figtree font-semibold text-xs transition-all duration-300 whitespace-nowrap ${
+                  selectedPlanId === plan.id
+                    ? 'bg-[#E8481C] text-white shadow-lg'
+                    : 'bg-white/50 text-[#121212] hover:bg-white/80'
+                }`}
+              >
+                {plan.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Single Card View - Only visible on mobile */}
+        <div className="md:hidden">
+          <div
+            className={`relative bg-white rounded-2xl overflow-hidden transition-all duration-300 ${
+              selectedPlan.isPopular 
+                ? 'shadow-lg border-2 border-[#E8481C]' 
+                : 'shadow-md border border-[#121212]/10'
+            }`}
+          >
+            {/* Popular Badge */}
+            {selectedPlan.isPopular && (
+              <div className="absolute top-0 right-0 bg-[#E8481C] text-white px-4 py-1 text-xs font-semibold font-figtree rounded-bl-2xl shadow-md">
+                Most Popular
+              </div>
+            )}
+
+            {/* Card Content */}
+            <div className="p-6">
+              {/* Plan Name */}
+              <h3 className="text-xl font-bold text-[#121212] mb-2 font-figtree">
+                {selectedPlan.name}
+              </h3>
+              
+              {/* Description */}
+              <p className="text-sm text-[#121212]/60 mb-4 font-figtree">
+                {selectedPlan.description}
+              </p>
+
+              {/* Price */}
+              <div className="mb-6 pb-6 border-b border-[#121212]/10">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold text-[#E8481C] font-figtree">
+                    {selectedPlan.price}
+                  </span>
+                  {selectedPlan.priceSubtext && (
+                    <span className="text-lg text-[#121212]/60 font-figtree">
+                      {selectedPlan.priceSubtext}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Features List */}
+              <ul className="space-y-3 mb-8">
+                {selectedPlan.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    {feature.included ? (
+                      <svg
+                        className="w-5 h-5 text-[#E8481C] flex-shrink-0 mt-0.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        className="w-5 h-5 text-[#121212]/30 flex-shrink-0 mt-0.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    )}
+                    <span className={`text-sm font-figtree ${
+                      feature.included ? 'text-[#121212]' : 'text-[#121212]/40 line-through'
+                    }`}>
+                      {feature.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA Button */}
+              <Link
+                href={selectedPlan.buttonLink}
+                className={`relative w-full px-6 py-3 font-figtree font-semibold rounded-xl overflow-hidden shadow-md transition-all duration-300 text-center flex items-center justify-center border ${
+                  selectedPlan.isPopular
+                    ? 'bg-[#E8481C] text-white hover:bg-[#ff6b47] border-[#E8481C]'
+                    : 'bg-[#121212] text-white hover:bg-[#E8481C] border-[#121212]'
+                }`}
+              >
+                <span className="relative z-10 text-sm transition-all duration-300">
+                  {selectedPlan.buttonText}
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Grid View - Hidden on mobile */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {plans.map((plan) => (
             <div
               key={plan.id}

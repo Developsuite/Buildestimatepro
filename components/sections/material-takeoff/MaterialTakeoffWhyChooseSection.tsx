@@ -17,11 +17,11 @@ export default function MaterialTakeoffWhyChooseSection() {
 
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         {/* Content */}
-        <div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree leading-tight">
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree leading-tight mx-auto md:mx-0">
             Choose the Best Quantity Takeoff Services with Us
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#E8481C] mb-4 sm:mb-6 font-figtree">
+          <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#E8481C] mb-4 sm:mb-6 font-figtree mx-auto md:mx-0">
             Make Your Project More Profitable and Get Your Business Famed as a Trusted Contractor in the Market
           </p>
           
@@ -37,15 +37,17 @@ export default function MaterialTakeoffWhyChooseSection() {
             </p>
           </div>
 
-          <Link
-            href="/contact"
-            className="mt-6 sm:mt-8 inline-flex items-center gap-2 text-[#E8481C] font-semibold font-figtree hover:text-[#ff6b47] transition-colors duration-300"
-          >
-            Read More
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+          <div className="flex justify-center md:justify-start">
+            <Link
+              href="/contact"
+              className="mt-6 sm:mt-8 inline-flex items-center gap-2 text-[#E8481C] font-semibold font-figtree hover:text-[#ff6b47] transition-colors duration-300"
+            >
+              Read More
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

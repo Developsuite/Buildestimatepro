@@ -22,7 +22,7 @@ const testimonials = [
     id: 3,
     name: 'Allison Dorwart',
     role: 'Contractor',
-    text: 'Construct Estimates is an exceptional asset to our projects. Despite the rush on some projects, CE demonstrated remarkable dedication, successfully meeting the deadlines without compromising the quality of their output. Based on this positive experience, I have no doubt that I will seek opportunities to collaborate with CE again in the future. Their expertise and reliability make them an invaluable team members for any project.',
+    text: 'Buildestimatepro is an exceptional asset to our projects. Despite the rush on some projects, CE demonstrated remarkable dedication, successfully meeting the deadlines without compromising the quality of their output. Based on this positive experience, I have no doubt that I will seek opportunities to collaborate with CE again in the future. Their expertise and reliability make them an invaluable team members for any project.',
     avatar: '/images/testimonials/avatar3.png'
   },
   {
@@ -36,14 +36,14 @@ const testimonials = [
     id: 5,
     name: 'Alex James',
     role: 'Contractor',
-    text: 'Construct Estimates provide accurate measurements with fast project delivery. Highly recommend.',
+    text: 'Buildestimatepro provide accurate measurements with fast project delivery. Highly recommend.',
     avatar: '/images/testimonials/avatar5.png'
   },
   {
     id: 6,
     name: 'Client',
     role: 'Contractor',
-    text: 'I would like to tell you how wonderful Scott Adkins and the rest of the team are at Construct Estimates. They have been doing my estimates for at least 2 years now and I have no complaints. I have on the project board at this moment over 3 million dollars of projects that they have estimated for me.',
+    text: 'I would like to tell you how wonderful Scott Adkins and the rest of the team are at Buildestimatepro. They have been doing my estimates for at least 2 years now and I have no complaints. I have on the project board at this moment over 3 million dollars of projects that they have estimated for me.',
     avatar: '/images/testimonials/avatar6.png'
   },
 ]
