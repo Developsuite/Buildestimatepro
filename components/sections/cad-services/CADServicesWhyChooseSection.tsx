@@ -66,14 +66,14 @@ export default function CADServicesWhyChooseSection() {
           </div>
 
           {/* Right Side - Features List */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 text-center md:text-left">
             <div className="mb-8">
               <div className="inline-block mb-4">
-                <div className="flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border-l-4 border-[#E8481C]">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border-l-4 border-[#E8481C] mx-auto md:mx-0">
                   <span className="text-xs font-semibold text-[#121212] uppercase tracking-wider">Our Advantages</span>
                 </div>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#121212] mb-4 font-figtree leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 font-figtree leading-tight">
                 Why Choose Our <span className="text-[#E8481C]">CAD Drafting Services</span>?
               </h2>
             </div>

@@ -85,8 +85,8 @@ export default function CommercialEstimatingServicesSection() {
 
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         {/* Section Header */}
-        <div className="text-left mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree">
+        <div className="text-center md:text-left mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree mx-auto md:mx-0">
             Commercial Estimating Services
           </h2>
         </div>

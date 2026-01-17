@@ -19,31 +19,31 @@ export default function CADServicesOverviewSection() {
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center md:text-left">
             <div className="inline-block mb-6">
-              <div className="flex items-center gap-3 px-5 py-2 bg-white/60 backdrop-blur-sm rounded-full border-l-4 border-[#E8481C] mx-auto lg:mx-0">
+              <div className="flex items-center gap-3 px-5 py-2 bg-white/60 backdrop-blur-sm rounded-full border-l-4 border-[#E8481C] mx-auto md:mx-0">
                 <div className="w-2 h-2 bg-[#E8481C] rounded-full animate-pulse"></div>
                 <span className="text-sm font-semibold text-[#121212] uppercase tracking-wider">Expert CAD Solutions</span>
               </div>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#121212] mb-6 font-figtree leading-[1.1]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#121212] mb-6 font-figtree leading-[1.1]">
               Professional <span className="text-[#E8481C] relative inline-block">CAD Drafting<div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#E8481C] to-transparent"></div></span> Services
             </h2>
 
             <div className="space-y-5 text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree">
-              <p className="relative pl-0 lg:pl-6 lg:before:content-[''] lg:before:absolute lg:before:left-0 lg:before:top-2 lg:before:w-1 lg:before:h-full lg:before:bg-gradient-to-b lg:before:from-[#E8481C] lg:before:to-transparent">
+              <p className="relative pl-0 md:pl-6 md:before:content-[''] md:before:absolute md:before:left-0 md:before:top-2 md:before:w-1 md:before:h-full md:before:bg-gradient-to-b md:before:from-[#E8481C] md:before:to-transparent">
                 BuildEstimatePro is a leading CAD drafting company expanding its scope across the USA. We provide comprehensive design and CAD services including 2D section drawings and 3D drawings for visual representation of structures, engineering, architectural, mechanical, and other construction project endeavors.
               </p>
-              <p className="relative pl-0 lg:pl-6 lg:before:content-[''] lg:before:absolute lg:before:left-0 lg:before:top-2 lg:before:w-1 lg:before:h-full lg:before:bg-gradient-to-b lg:before:from-[#E8481C] lg:before:to-transparent">
+              <p className="relative pl-0 md:pl-6 md:before:content-[''] md:before:absolute md:before:left-0 md:before:top-2 md:before:w-1 md:before:h-full md:before:bg-gradient-to-b md:before:from-[#E8481C] md:before:to-transparent">
                 Our expert CAD drafter teams possess years of experience in construction design consultancy, MEP consultancy, landscaping, interior design, and more drafting services. We deliver conceptual drawing blueprints that ensure detail, precision, and productivity.
               </p>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <div className="mt-10 flex flex-wrap items-center justify-center md:justify-start gap-4">
               <Link
                 href="/contact"
-                className="group relative px-8 py-4 bg-[#E8481C] text-white font-figtree font-semibold overflow-hidden transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+                className="group relative px-4 py-2 md:px-8 md:py-4 bg-[#E8481C] text-white font-figtree font-semibold text-xs md:text-base overflow-hidden transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Get A Quote

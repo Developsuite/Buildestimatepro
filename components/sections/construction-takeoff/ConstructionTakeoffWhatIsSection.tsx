@@ -33,7 +33,7 @@ export default function ConstructionTakeoffWhatIsSection() {
             What are <span className="text-[#E8481C]">Construction Takeoff Services</span>?
           </h2>
           
-          <div className="space-y-4 sm:space-y-5 md:space-y-6 text-sm sm:text-base md:text-lg text-white/80 leading-relaxed font-figtree">
+          <div className="space-y-4 sm:space-y-5 md:space-y-6 text-sm sm:text-base md:text-lg text-white/80 leading-relaxed font-figtree text-center md:text-left">
             <p>
               Construction takeoff services involve estimating the quantities of construction materials, manpower, and equipment needed to complete a construction project. It is essential for creating accurate estimates and budgets, which enable projects to be accomplished on time and cost-effectively.
             </p>

@@ -33,8 +33,8 @@ export default function MaterialTakeoffWhySection() {
           </div>
 
           {/* Right Side - Content */}
-          <div className="w-full lg:w-1/2 order-1 lg:order-2">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree leading-tight">
+          <div className="w-full lg:w-1/2 order-1 lg:order-2 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree leading-tight mx-auto md:mx-0">
               Choose Our Material Takeoff Services for Growth Opportunity
             </h2>
             
@@ -50,10 +50,10 @@ export default function MaterialTakeoffWhySection() {
               </p>
             </div>
 
-            <div className="mt-8 sm:mt-10">
+            <div className="mt-8 sm:mt-10 flex justify-center md:justify-start">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#E8481C] text-white font-figtree font-semibold rounded-lg hover:bg-[#ff6b47] transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="group inline-flex items-center gap-3 px-4 py-2 md:px-8 md:py-4 bg-[#E8481C] text-white font-figtree text-xs md:text-base font-semibold rounded-lg hover:bg-[#ff6b47] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Get Started Today
                 <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

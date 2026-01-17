@@ -21,11 +21,11 @@ export default function ConstructionEstimatingConsultantOverviewSection() {
         <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12 xl:gap-16">
           {/* Left Side - Content */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree text-center md:text-left">
               Professional <span className="text-[#E8481C]">Estimating Consulting</span> Services
             </h2>
             
-            <div className="space-y-4 sm:space-y-5 md:space-y-6 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree text-center md:text-left">
               <p>
                 With over 1000 satisfied clients across the North American construction industry, our team of estimators and consultants is well-versed with current market conditions, different construction techniques, and possess a keen eye to detail. They remain committed through all the phases of construction and design from budget estimate to construction document estimate.
               </p>
@@ -37,13 +37,13 @@ export default function ConstructionEstimatingConsultantOverviewSection() {
               </p>
             </div>
 
-            <div className="mt-6 sm:mt-8">
+            <div className="mt-6 sm:mt-8 text-center md:text-left">
               <Link
                 href="/samples"
-                className="group inline-flex items-center gap-2 px-6 py-3 bg-[#E8481C] text-white font-figtree font-semibold rounded-sm hover:bg-[#ff6b47] transition-all duration-300 hover:scale-105 shadow-lg"
+                className="group inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-[#E8481C] text-white font-figtree font-semibold rounded-sm hover:bg-[#ff6b47] transition-all duration-300 hover:scale-105 shadow-lg text-xs sm:text-base"
               >
                 View Our Sample Estimates
-                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>

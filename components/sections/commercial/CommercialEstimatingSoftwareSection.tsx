@@ -48,19 +48,19 @@ export default function CommercialEstimatingSoftwareSection() {
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
           {/* Left Side - Software */}
-          <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree mx-auto md:mx-0">
               Expert Software Expertise
             </h2>
             
-            <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree mb-6">
+            <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree mb-6 mx-auto md:mx-0">
               <p>
                 We have expert estimators highly skilled in industry-leading software tools to ensure accuracy, efficiency, and precision in our commercial estimating services.
               </p>
             </div>
             
             <div className="bg-white/60 backdrop-blur-md p-6 sm:p-8 rounded-xl border border-white/50 shadow-lg">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <ul className="grid grid-cols-2 gap-3 sm:gap-4">
                 {software.map((tool, index) => (
                   <li key={index} className="flex items-center gap-2 text-sm sm:text-base text-[#121212]/80 font-figtree">
                     <svg className="w-5 h-5 text-[#E8481C] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -74,19 +74,19 @@ export default function CommercialEstimatingSoftwareSection() {
           </div>
 
           {/* Right Side - CSI Divisions */}
-          <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree mx-auto md:mx-0">
               Complete CSI Division Coverage
             </h2>
             
-            <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree mb-6">
+            <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree mb-6 mx-auto md:mx-0">
               <p>
                 With in-house trade specialized estimators, we offer commercial estimating services in all CSI divisions. You can rely on us for comprehensive takeoffs across all construction trades.
               </p>
             </div>
             
             <div className="bg-white/60 backdrop-blur-md p-6 sm:p-8 rounded-xl border border-white/50 shadow-lg">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <ul className="grid grid-cols-2 gap-3 sm:gap-4">
                 {csiDivisions.map((division, index) => (
                   <li key={index} className="flex items-center gap-2 text-sm sm:text-base text-[#121212]/80 font-figtree">
                     <svg className="w-5 h-5 text-[#E8481C] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">

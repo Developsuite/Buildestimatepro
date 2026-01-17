@@ -18,12 +18,12 @@ export default function IndustrialEstimatingHeroSection() {
       </div>
 
       {/* Breadcrumb */}
-      <div className="absolute top-4 left-4 sm:left-6 md:left-8 lg:left-12 xl:left-16 2xl:left-20 3xl:px-24 z-30">
-        <nav className="text-white/80 text-xs sm:text-sm font-figtree">
+      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 md:left-4 md:transform-none sm:left-6 lg:left-12 xl:left-16 2xl:left-20 3xl:px-24 z-30">
+        <nav className="text-white/80 text-xs font-figtree whitespace-nowrap">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
-          <span className="mx-2">»</span>
+          <span className="mx-1">»</span>
           <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-          <span className="mx-2">»</span>
+          <span className="mx-1">»</span>
           <span className="text-white">Industrial Estimating Services</span>
         </nav>
       </div>
@@ -43,18 +43,18 @@ export default function IndustrialEstimatingHeroSection() {
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 px-2 md:px-0">
               <Link 
                 href="/contact" 
-                className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-[#E8481C] text-white font-figtree font-semibold rounded-sm overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center"
+                className="group relative w-full sm:w-auto px-4 py-2 md:px-8 md:py-3.5 bg-[#E8481C] text-white font-figtree font-semibold rounded-sm overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center text-xs md:text-base"
               >
-                <span className="relative z-10 text-sm sm:text-base group-hover:tracking-wide transition-all duration-300">Get Industrial Estimate</span>
+                <span className="relative z-10 group-hover:tracking-wide transition-all duration-300">Get Industrial Estimate</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b47] to-[#E8481C] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
               
               <Link 
                 href="/contact" 
-                className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-white/10 backdrop-blur-md text-white font-figtree font-semibold rounded-sm overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/30 hover:border-white text-center"
+                className="group relative w-full sm:w-auto px-4 py-2 md:px-8 md:py-3.5 bg-white text-[#E8481C] font-figtree font-semibold rounded-sm overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white hover:border-[#E8481C] text-center text-xs md:text-base"
               >
-                <span className="relative z-10 text-sm sm:text-base group-hover:tracking-wide transition-all duration-300">Upload Plans</span>
-                <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <span className="relative z-10 group-hover:tracking-wide transition-all duration-300">Upload Plans</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FFF5F2] to-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             </div>
           </div>

@@ -37,7 +37,7 @@ export default function CommercialEstimatingHowToStartSection() {
       <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 3xl:px-24">
         {/* Section Header */}
         <div className="text-center sm:text-left mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree mx-auto sm:mx-0">
             How to Get Started
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-[#121212]/70 max-w-2xl mx-auto sm:mx-0 font-figtree leading-relaxed">

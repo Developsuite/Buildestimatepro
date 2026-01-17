@@ -23,9 +23,9 @@ export default function CADServicesCTASection() {
           
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 sm:p-10 md:p-12 lg:p-16 items-center">
             {/* Left Content */}
-            <div>
+            <div className="text-center md:text-left">
               <div className="inline-block mb-6">
-                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mx-auto md:mx-0">
                   <div className="flex -space-x-2">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E8481C] to-[#ff6b47] border-2 border-[#121212]"></div>
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#0063BF] to-[#4a9eff] border-2 border-[#121212]"></div>
@@ -34,11 +34,11 @@ export default function CADServicesCTASection() {
                 </div>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 font-figtree leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-figtree leading-tight">
                 Experience World-Class <span className="text-[#E8481C]">CAD Drafting Services</span>
               </h2>
               
-              <p className="text-base md:text-lg text-white/70 mb-8 leading-relaxed">
+              <p className="text-base md:text-lg text-white/70 mb-8 leading-relaxed mx-auto md:mx-0">
                 Get accurate, dependable, and high-quality blueprints for your construction projects. 25+ years of experience serving clients across the USA.
               </p>
               
@@ -57,9 +57,9 @@ export default function CADServicesCTASection() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-start gap-4">
-                <Link href="/contact" className="group relative px-8 py-4 bg-[#E8481C] text-white font-semibold rounded-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl hover:shadow-[#E8481C]/50 overflow-hidden">
-                  <span className="relative z-10 flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                <Link href="/contact" className="group relative w-full sm:w-auto px-4 py-2 md:px-8 md:py-4 bg-[#E8481C] text-white font-semibold text-xs md:text-base rounded-lg hover:scale-105 transition-all shadow-xl hover:shadow-2xl hover:shadow-[#E8481C]/50 overflow-hidden">
+                  <span className="relative z-10 flex items-center justify-center gap-2">
                     Upload Plans
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -68,7 +68,7 @@ export default function CADServicesCTASection() {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b47] to-[#E8481C] translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                 </Link>
                 
-                <Link href="/contact" className="px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white/30 hover:bg-white/10 hover:border-white/50 hover:scale-105 transition-all">
+                <Link href="/contact" className="w-full sm:w-auto px-4 py-2 md:px-8 md:py-4 bg-transparent text-white font-semibold text-xs md:text-base rounded-lg border-2 border-white/30 hover:bg-white/10 hover:border-white/50 hover:scale-105 transition-all text-center">
                   Get A Free Quote
                 </Link>
               </div>

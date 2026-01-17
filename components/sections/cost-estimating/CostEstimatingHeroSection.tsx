@@ -18,7 +18,7 @@ export default function CostEstimatingHeroSection() {
       </div>
 
       {/* Breadcrumb */}
-      <div className="absolute top-4 left-4 sm:left-6 md:left-8 lg:left-12 xl:left-16 2xl:left-20 3xl:px-24 z-30">
+      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 md:left-4 md:transform-none sm:left-6 lg:left-12 xl:left-16 2xl:left-20 3xl:px-24 z-30">
         <nav className="text-white/80 text-xs sm:text-sm font-figtree">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <span className="mx-2">»</span>

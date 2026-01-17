@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 interface SampleDocument {
   id: string
   title: string
@@ -111,63 +113,63 @@ const sampleDocuments: SampleDocument[] = [
     id: '15',
     title: 'Multi-Family',
     filename: 'MULTI-FAMILY-GC-Sample.pdf',
-    image: '/images/home/section2/1.webp',
+  image: '/images/home/faqs.png',
     category: 'Residential'
   },
   {
     id: '16',
     title: 'Openings',
     filename: 'Openings-Sample.pdf',
-    image: '/images/home/section2/2.webp',
+    image: '/images/services/servicespage/4.webp',
     category: 'Construction'
   },
   {
     id: '17',
     title: 'PID',
     filename: 'PID-Estimate-Sample.pdf',
-    image: '/images/home/section2/3.webp',
+    image: '/images/services/servicespage/5.webp',
     category: 'Industrial'
   },
   {
     id: '18',
     title: 'Plumbing',
     filename: 'Plumbing-Estimate-Big-Sample.pdf',
-    image: '/images/home/section2/4.webp',
+    image: '/images/services/servicespage/6.webp',
     category: 'Plumbing'
   },
   {
     id: '19',
     title: 'Power',
     filename: 'Power-Distribution-Estimate-Sample_watermark-1.pdf',
-    image: '/images/home/section2/5.webp',
+    image: '/images/services/servicespage/7.webp',
     category: 'Electrical'
   },
   {
     id: '20',
     title: 'Remodel',
     filename: 'REMODEL-Sample.pdf',
-    image: '/images/home/section2/6.webp',
+    image: '/images/services/servicespage/8.webp',
     category: 'Remodeling'
   },
   {
     id: '21',
     title: 'Residential',
     filename: 'RESIDENTIAL-Sample.pdf',
-    image: '/images/home/section2/7.webp',
+    image: '/images/services/servicespage/9.webp',
     category: 'Residential'
   },
   {
     id: '22',
     title: 'Telecom',
     filename: 'TELECOM-ESTIMATE-SAMPLE.pdf',
-    image: '/images/home/section2/8.webp',
+    image: '/images/services/servicespage/10.webp',
     category: 'Telecom'
   },
   {
     id: '23',
     title: 'Mitigation',
     filename: 'Water-and-Fire-Mitigation-Xactimate.pdf',
-    image: '/images/home/section2/9.webp',
+    image: '/images/materialtakeoff/4.jpg',
     category: 'Restoration'
   }
 ]
@@ -182,7 +184,7 @@ export default function SampleGrid() {
     <section className="py-20 px-4 sm:px-6 lg:px-[50px] bg-[#F5F1E6]">
       <div className="max-w-[1400px] mx-auto">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="mb-16 text-center md:text-left">
           <div className="inline-block mb-4">
             <span className="text-[#E8481C] font-figtree font-semibold text-sm tracking-wider uppercase">
               Our Portfolio
@@ -191,7 +193,7 @@ export default function SampleGrid() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#121212] mb-6 font-figtree leading-tight">
             Sample Documents
           </h2>
-          <p className="text-base md:text-lg text-[#121212]/70 max-w-3xl font-figtree leading-relaxed">
+          <p className="text-base md:text-lg text-[#121212]/70 max-w-3xl font-figtree leading-relaxed mx-auto md:mx-0">
             Explore our comprehensive collection of professional estimation samples across various construction trades and project types.
           </p>
         </div>
@@ -205,10 +207,12 @@ export default function SampleGrid() {
             >
               {/* Image Container */}
               <div className="relative h-56 overflow-hidden bg-gradient-to-br from-[#F5F1E6] to-[#E8E4D9]">
-                <img
+                <Image
                   src={document.image}
                   alt={document.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                 />
                 
                 {/* Gradient Overlay */}

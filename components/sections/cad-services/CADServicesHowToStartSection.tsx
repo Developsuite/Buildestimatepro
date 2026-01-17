@@ -47,11 +47,11 @@ export default function CADServicesHowToStartSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <div className="flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border-l-4 border-[#E8481C]">
+            <div className="flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border-l-4 border-[#E8481C] mx-auto">
               <span className="text-xs font-semibold text-[#121212] uppercase tracking-wider">Simple Process</span>
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#121212] mb-4 font-figtree">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 font-figtree">
             How To Get Started with <span className="text-[#E8481C]">CAD Drafting</span>
           </h2>
           <p className="text-lg text-[#121212]/60 max-w-2xl mx-auto">Four simple steps to get professional CAD drafting services</p>
@@ -112,7 +112,7 @@ export default function CADServicesHowToStartSection() {
               <h3 className="text-xl font-bold text-white mb-2 font-figtree">Ready to get started?</h3>
               <p className="text-white/70 text-sm">Upload your plans and receive a quote within minutes</p>
             </div>
-            <Link href="/contact" className="px-8 py-3 bg-[#E8481C] text-white font-semibold rounded-lg hover:bg-[#ff6b47] transition-all hover:scale-105 whitespace-nowrap">
+            <Link href="/contact" className="px-4 py-2 md:px-8 md:py-3 bg-[#E8481C] text-white font-semibold text-xs md:text-base rounded-lg hover:bg-[#ff6b47] transition-all hover:scale-105 whitespace-nowrap">
               Upload Plans Now
             </Link>
           </div>

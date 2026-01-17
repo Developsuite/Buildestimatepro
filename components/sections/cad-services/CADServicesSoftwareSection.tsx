@@ -39,17 +39,17 @@ export default function CADServicesSoftwareSection() {
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         {/* Header with Image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
+          <div className="text-center md:text-left">
             <div className="inline-block mb-4">
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mx-auto md:mx-0">
                 <div className="w-2 h-2 bg-[#E8481C] rounded-full animate-pulse"></div>
                 <span className="text-xs font-semibold text-white/70 uppercase tracking-wider">Technology Stack</span>
               </div>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 font-figtree">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-figtree">
               Industry-Leading <span className="text-[#E8481C]">Software</span> We Use
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed">
+            <p className="text-white/60 text-lg leading-relaxed mx-auto md:mx-0">
               We leverage the most advanced CAD software tools to deliver precision drafting and design services that meet international standards.
             </p>
           </div>

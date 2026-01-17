@@ -35,7 +35,7 @@ export default function VirtualBidManagementOverviewSection() {
         <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12 xl:gap-16">
           {/* Left Side - Content */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree text-center md:text-left">
               Elevate Your <span className="text-[#E8481C]">Bidding Process</span>
             </h2>
             
@@ -43,12 +43,12 @@ export default function VirtualBidManagementOverviewSection() {
               {features.map((feature, index) => (
                 <div key={index} className="group relative">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#E8481C] to-[#E8481C]/80 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#E8481C] to-[#E8481C]/80 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto md:mx-0">
                       <span className="text-white font-bold text-base sm:text-lg font-figtree">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 text-center md:text-left">
                       <h3 className="text-lg sm:text-xl font-bold text-[#121212] mb-2 font-figtree group-hover:text-[#E8481C] transition-colors duration-300">
                         {feature.title}
                       </h3>

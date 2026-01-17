@@ -17,11 +17,11 @@ export default function ConstructionTakeoffOverviewSection() {
 
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         <div className="w-full">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-6 sm:mb-8 font-figtree text-left">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-6 sm:mb-8 font-figtree text-center md:text-left">
             Plan Your <span className="text-[#E8481C]">Construction Projects</span> with Confidence
           </h2>
           
-          <div className="space-y-4 sm:space-y-5 md:space-y-6 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree">
+          <div className="space-y-4 sm:space-y-5 md:space-y-6 text-sm sm:text-base md:text-lg text-[#121212]/70 leading-relaxed font-figtree text-center md:text-left">
             <p>
               Every construction project needs a clear plan, and a big part of that plan is a construction takeoff. A takeoff is a comprehensive list of all the materials, labor, and equipment needed to complete the job. It serves as the foundation of your budget and your schedule; without it, you will run into additional expenses, delays, or missing essential items.
             </p>

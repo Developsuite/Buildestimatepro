@@ -39,7 +39,7 @@ export default function ConstructionTakeoffCTASection() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="group relative px-6 py-3 bg-gradient-to-r from-[#E8481C] to-[#ff6b47] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#E8481C]/50 font-figtree w-full sm:w-auto text-sm sm:text-base"
+                  className="group relative px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-[#E8481C] to-[#ff6b47] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#E8481C]/50 font-figtree w-full sm:w-auto text-xs sm:text-base"
                 >
                   <span className="relative z-10">Contact Us Now</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b47] to-[#E8481C] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -47,7 +47,7 @@ export default function ConstructionTakeoffCTASection() {
                 
                 <Link
                   href="/contact"
-                  className="group relative px-6 py-3 bg-white/10 backdrop-blur-md text-white font-semibold rounded-lg border-2 border-white/30 overflow-hidden transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 font-figtree w-full sm:w-auto text-sm sm:text-base"
+                  className="group relative px-4 py-2 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-md text-white font-semibold rounded-lg border-2 border-white/30 overflow-hidden transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 font-figtree w-full sm:w-auto text-xs sm:text-base"
                 >
                   <span className="relative z-10">Upload Your Plans</span>
                 </Link>

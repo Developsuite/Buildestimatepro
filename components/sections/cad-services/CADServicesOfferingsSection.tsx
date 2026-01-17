@@ -19,11 +19,11 @@ export default function CADServicesOfferingsSection() {
 
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         {/* Header */}
-        <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#121212] mb-4 font-figtree">
+        <div className="mb-16 text-center md:text-left">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 font-figtree">
             Our CAD Drafting Company <span className="text-[#E8481C]">Offers</span>
           </h2>
-          <p className="text-lg text-[#121212]/60 max-w-3xl">Comprehensive CAD solutions tailored to your construction and design needs</p>
+          <p className="text-lg text-[#121212]/60 max-w-3xl mx-auto md:mx-0">Comprehensive CAD solutions tailored to your construction and design needs</p>
         </div>
 
         {/* Main Featured Services - Asymmetric Layout */}

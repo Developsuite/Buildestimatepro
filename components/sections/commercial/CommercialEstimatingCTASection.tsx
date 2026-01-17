@@ -37,7 +37,7 @@ export default function CommercialEstimatingCTASection() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 bg-[#E8481C] text-white font-figtree text-sm sm:text-base md:text-lg font-semibold rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 md:px-10 md:py-4 bg-[#E8481C] text-white font-figtree text-xs sm:text-sm md:text-lg font-semibold rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                 >
                   {/* Liquid fill hover effect */}
                   <span className="absolute inset-0 bg-white transform scale-x-0 origin-left transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-x-100"></span>

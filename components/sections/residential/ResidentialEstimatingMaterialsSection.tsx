@@ -22,8 +22,8 @@ export default function ResidentialEstimatingMaterialsSection() {
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
           {/* Left Side - Material Quantification */}
-          <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree mx-auto md:mx-0">
               Accurate and Efficient Material Quantification
             </h2>
             
@@ -38,8 +38,8 @@ export default function ResidentialEstimatingMaterialsSection() {
           </div>
 
           {/* Right Side - Tools */}
-          <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] mb-4 sm:mb-6 font-figtree mx-auto md:mx-0">
               Precise Estimation with Industry-Leading Tools
             </h2>
             
@@ -50,9 +50,9 @@ export default function ResidentialEstimatingMaterialsSection() {
               
               <div className="bg-white/60 backdrop-blur-md p-6 sm:p-8 rounded-xl border border-white/50 shadow-lg">
                 <p className="text-sm sm:text-base font-semibold text-[#121212] mb-4 font-figtree">Our Software & Tools:</p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <ul className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4">
                   {['Bluebeam', 'Quest Estimating', 'Planswift', 'RS Means', 'Xactimate', 'FastPIPE', 'FastDUCT', 'FastWRAP', 'Trimble', 'IMHS Mark Systems'].map((tool, index) => (
-                    <li key={index} className="flex items-center gap-2 text-sm sm:text-base text-[#121212]/80 font-figtree">
+                    <li key={index} className="flex items-center justify-start gap-2 text-sm sm:text-base text-[#121212]/80 font-figtree">
                       <svg className="w-5 h-5 text-[#E8481C] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>

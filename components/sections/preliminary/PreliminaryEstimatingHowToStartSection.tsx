@@ -36,7 +36,7 @@ export default function PreliminaryEstimatingHowToStartSection() {
       <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 3xl:px-24">
         {/* Section Header */}
         <div className="text-center sm:text-left mb-12 sm:mb-14 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#121212] mb-4 sm:mb-5 md:mb-6 font-figtree">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#121212] mb-4 sm:mb-5 md:mb-6 font-figtree mx-auto sm:mx-0">
             How to Get Started
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 max-w-2xl mx-auto sm:mx-0 font-figtree leading-relaxed">

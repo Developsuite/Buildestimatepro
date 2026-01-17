@@ -22,31 +22,31 @@ export default function ResidentialEstimatingPortfolioSection() {
 
       <div className="relative z-10 max-w-7xl 2xl:max-w-[90rem] mx-auto pl-2 sm:pl-3 md:pl-4 lg:pl-6 xl:pl-8 2xl:pl-10 3xl:pl-12 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 2xl:pr-20 3xl:pr-24">
         {/* Section Header */}
-        <div className="text-left mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree">
+        <div className="text-center md:text-left mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#121212] mb-3 sm:mb-4 font-figtree mx-auto md:mx-0">
             Our Residential Estimating Portfolio: Unveiling the Essence of Your Dream Home
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 max-w-3xl font-figtree leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-[#121212]/70 max-w-3xl font-figtree leading-relaxed mx-auto md:mx-0">
             At BuildEstimatePro, we take pride in our track record of successful projects with satisfied clients. We have provided comprehensive estimates for diverse residential endeavors, including general contractors, developers, and notable projects. With our expertise and attention to detail, we ensure accurate and reliable quantity takeoffs tailored to your specific needs.
           </p>
         </div>
 
         {/* Portfolio Images Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((imageNumber, index) => (
             <div
               key={index}
               className="group relative aspect-square overflow-hidden rounded-lg bg-white/50 backdrop-blur-sm border border-white/30 hover:border-[#E8481C]/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               <Image
-                src={`/images/home/section 2/${index}.webp`}
-                alt={`Residential Project ${index}`}
+                src={`/images/services/servicespage/${imageNumber}.webp`}
+                alt={`Residential Project ${imageNumber}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <p className="text-white text-xs sm:text-sm font-semibold font-figtree">Project {index}</p>
+                <p className="text-white text-xs sm:text-sm font-semibold font-figtree">Project {imageNumber}</p>
               </div>
             </div>
           ))}
